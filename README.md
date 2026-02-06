@@ -2,6 +2,8 @@
 
 **Your daily dose of AI intelligence.** A production-grade AI news aggregation website with Editorial Neon Brutalism aesthetics.
 
+📚 **[Complete Project Wiki →](PROJECT-WIKI.md)** — Start here for comprehensive documentation
+
 ![Next.js](https://img.shields.io/badge/Next.js-14-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-cyan)
