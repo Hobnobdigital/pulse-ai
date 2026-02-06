@@ -46,11 +46,15 @@ Requirements:
 1. Headline: Catchy, informative
 2. {tone_instruction}
 3. Length: 400-500 words
-4. Structure: Engaging intro, key insights, why it matters, closing thought
+4. Structure: Use H2 headers (##) to break up content:
+   - ## The Setup (intro/context)
+   - ## The Story (main content)  
+   - ## Why This Matters (analysis)
+   - ## The Takeaway (closing)
 5. Make it completely original - not traceable to source
-6. IMPORTANT: Do NOT use em dashes (—) in your writing. Use commas, periods, or hyphens instead.
-6. Include reading time estimate
-7. Category: Choose from [LLMs, Enterprise AI, Industry, Research, GenAI]
+6. IMPORTANT: Do NOT use em dashes (—). Use commas, periods, or hyphens.
+7. Include reading time estimate
+8. Category: Choose from [LLMs, Enterprise AI, Industry, Research, GenAI]
 
 Return valid JSON:
 {{

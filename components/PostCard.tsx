@@ -46,12 +46,12 @@ export default function PostCard({ post, index }: { post: Post; index: number })
       <Link href={`/post/${post.id}`}>
         <article className="group relative bg-white rounded-2xl overflow-hidden h-full flex flex-col border border-border hover:border-ink/20 hover:shadow-medium transition-all duration-300 cursor-pointer">
           {/* Image */}
-          <div className="relative h-52 sm:h-56 overflow-hidden">
+          <div className="relative h-52 sm:h-56 overflow-hidden bg-surface-dim">
             <Image
               src={post.image_url}
               alt={post.title}
               fill
-              className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              className="object-contain transition-transform duration-500 ease-out group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

@@ -38,12 +38,12 @@ export default async function PostPage({ params }: PostPageProps) {
 
       <article className="min-h-screen">
         {/* Hero Image */}
-        <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+        <div className="relative h-[50vh] md:h-[60vh] overflow-hidden bg-surface-dim">
           <Image
             src={post.image_url}
             alt={post.title}
             fill
-            className="object-cover"
+            className="object-contain"
             priority
             sizes="100vw"
           />
