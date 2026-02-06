@@ -1,0 +1,713 @@
+{
+  "name": "Pulse AI - News Aggregator & Editorial System",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 3
+            }
+          ]
+        }
+      },
+      "id": "trigger-schedule",
+      "name": "Schedule: Every 3 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://openai.com/blog/rss.xml",
+        "options": {}
+      },
+      "id": "rss-openai",
+      "name": "RSS: OpenAI Blog",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [450, 100],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "url": "https://www.marktechpost.com/feed/",
+        "options": {}
+      },
+      "id": "rss-marktech",
+      "name": "RSS: MarkTechPost",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [450, 200],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "url": "https://huggingface.co/blog/feed.xml",
+        "options": {}
+      },
+      "id": "rss-huggingface",
+      "name": "RSS: Hugging Face",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [450, 300],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "options": {}
+      },
+      "id": "rss-techcrunch",
+      "name": "RSS: TechCrunch AI",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [450, 400],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "url": "https://venturebeat.com/category/ai/feed/",
+        "options": {}
+      },
+      "id": "rss-venturebeat",
+      "name": "RSS: VentureBeat AI",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [450, 500],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "url": "https://blog.google/technology/ai/rss/",
+        "options": {}
+      },
+      "id": "rss-google",
+      "name": "RSS: Google AI Blog",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [450, 600],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "url": "https://www.anthropic.com/news/rss.xml",
+        "options": {}
+      },
+      "id": "rss-anthropic",
+      "name": "RSS: Anthropic",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [450, 700],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&max_results=20",
+        "options": {}
+      },
+      "id": "http-arxiv",
+      "name": "HTTP: ArXiv CS.AI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [450, 800],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse ArXiv XML response and convert to standard format\nconst items = [];\nconst xml = $input.first().json.data;\n\ntry {\n  const parser = require('xml2js');\n  const parseString = parser.parseString;\n  \n  parseString(xml, { explicitArray: false }, (err, result) => {\n    if (err) throw err;\n    \n    const entries = result.feed.entry || [];\n    const entriesArray = Array.isArray(entries) ? entries : [entries];\n    \n    for (const entry of entriesArray) {\n      items.push({\n        json: {\n          title: entry.title.replace(/\\n/g, ' ').trim(),\n          link: entry.id,\n          content: entry.summary.replace(/\\n/g, ' ').trim(),\n          pubDate: entry.published,\n          creator: Array.isArray(entry.author) ? entry.author.map(a => a.name).join(', ') : entry.author.name,\n          source: 'ArXiv'\n        }\n      });\n    }\n  });\n} catch (e) {\n  console.error('ArXiv parsing error:', e);\n}\n\nreturn items;"
+      },
+      "id": "code-arxiv-parse",
+      "name": "Parse ArXiv XML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 800]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "mergeByPosition",
+        "options": {}
+      },
+      "id": "merge-all-sources",
+      "name": "Merge All Sources",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [850, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggregate, deduplicate, filter by time, rank, and select top 5\nconst items = $input.all();\nconst now = new Date();\nconst sixHoursAgo = new Date(now - 6 * 60 * 60 * 1000);\n\nconst relevanceKeywords = [\n  'llm', 'gpt', 'ai model', 'generative', 'chatgpt', 'claude', 'gemini',\n  'transformer', 'neural network', 'deep learning', 'machine learning',\n  'diffusion', 'stable diffusion', 'midjourney', 'openai', 'anthropic',\n  'large language model', 'foundation model', 'agi', 'multimodal'\n];\n\n// Helper: Calculate title similarity (Jaccard)\nfunction titleSimilarity(a, b) {\n  const wordsA = new Set(a.toLowerCase().split(/\\W+/));\n  const wordsB = new Set(b.toLowerCase().split(/\\W+/));\n  const intersection = new Set([...wordsA].filter(x => wordsB.has(x)));\n  const union = new Set([...wordsA, ...wordsB]);\n  return intersection.size / union.size;\n}\n\n// Helper: Calculate relevance score\nfunction relevanceScore(article) {\n  const text = `${article.title} ${article.content || ''}`.toLowerCase();\n  let score = 0;\n  \n  for (const keyword of relevanceKeywords) {\n    const regex = new RegExp(keyword, 'gi');\n    const matches = text.match(regex);\n    if (matches) score += matches.length;\n  }\n  \n  return score;\n}\n\n// Step 1: Normalize and filter by time\nconst recent = [];\nfor (const item of items) {\n  const article = item.json;\n  const pubDate = new Date(article.pubDate || article.published || article.isoDate);\n  \n  if (pubDate >= sixHoursAgo) {\n    recent.push({\n      title: article.title,\n      link: article.link,\n      content: article.content || article.contentSnippet || article.summary || '',\n      pubDate: pubDate.toISOString(),\n      source: article.source || 'Unknown',\n      creator: article.creator || article.author || 'Unknown'\n    });\n  }\n}\n\n// Step 2: Deduplicate by title similarity (threshold 0.7)\nconst deduplicated = [];\nfor (const article of recent) {\n  let isDuplicate = false;\n  \n  for (const existing of deduplicated) {\n    if (titleSimilarity(article.title, existing.title) > 0.7) {\n      isDuplicate = true;\n      break;\n    }\n  }\n  \n  if (!isDuplicate) {\n    deduplicated.push(article);\n  }\n}\n\n// Step 3: Calculate relevance scores\nfor (const article of deduplicated) {\n  article.relevanceScore = relevanceScore(article);\n}\n\n// Step 4: Sort by relevance score (descending)\ndeduplicated.sort((a, b) => b.relevanceScore - a.relevanceScore);\n\n// Step 5: Select top 5\nconst top5 = deduplicated.slice(0, 5);\n\n// Return as n8n items\nreturn top5.map(article => ({ json: article }));"
+      },
+      "id": "code-aggregate-filter",
+      "name": "Aggregate & Filter Top 5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Sentiment analysis: detect sensitive topics and set tone\nconst article = $input.item.json;\n\nconst sensitiveKeywords = [\n  'job loss', 'unemployment', 'layoff', 'replace workers', 'ai warfare',\n  'autonomous weapons', 'military ai', 'ethics scandal', 'bias',\n  'discrimination', 'deepfake', 'misinformation', 'privacy breach',\n  'surveillance', 'copyright infringement', 'lawsuit'\n];\n\nconst text = `${article.title} ${article.content}`.toLowerCase();\n\nlet isSensitive = false;\nfor (const keyword of sensitiveKeywords) {\n  if (text.includes(keyword)) {\n    isSensitive = true;\n    break;\n  }\n}\n\nconst toneFlag = isSensitive ? 'serious-only' : 'humor-allowed';\n\n// Extract key concepts (top words, excluding common words)\nconst stopWords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'from', 'as', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'should', 'could', 'may', 'might', 'can', 'this', 'that', 'these', 'those']);\n\nconst words = text.match(/\\b\\w+\\b/g) || [];\nconst wordFreq = {};\n\nfor (const word of words) {\n  if (word.length > 3 && !stopWords.has(word)) {\n    wordFreq[word] = (wordFreq[word] || 0) + 1;\n  }\n}\n\nconst sortedWords = Object.entries(wordFreq)\n  .sort((a, b) => b[1] - a[1])\n  .slice(0, 5)\n  .map(([word]) => word);\n\nconst keyConcept = sortedWords.join(' ');\n\nreturn {\n  json: {\n    ...article,\n    toneFlag,\n    isSensitive,\n    keyConcept\n  }\n};"
+      },
+      "id": "code-sentiment",
+      "name": "Sentiment Analysis",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "anthropic/claude-sonnet-4-5"
+            },
+            {
+              "name": "messages",
+              "value": "={{ [{\"role\": \"user\", \"content\": \"You are the editorial voice of Pulse AI - an AI news site for both learners and tech professionals.\\n\\nOriginal article:\\nTitle: \" + $json.title + \"\\nContent: \" + $json.content + \"\\n\\nTone guidance: \" + $json.toneFlag + \"\\n\\nRewrite this as a 300-500 word original piece with:\\n- Bite-sized, scannable paragraphs\\n- Editorial commentary and insight\\n- Balance accessibility with technical depth\\n\" + ($json.toneFlag === 'humor-allowed' ? \"- Inject subtle dry humor and personality\\n\" : \"- Keep tone respectful and serious\\n\") + \"- SEO-friendly headline\\n- 2-3 sentence snippet/preview\\n\\nFormat as JSON:\\n{\\n  \\\"title\\\": \\\"...\\\",\\n  \\\"snippet\\\": \\\"...\\\",\\n  \\\"content\\\": \\\"... (markdown format)\\\",\\n  \\\"category\\\": \\\"LLMs|GenAI|Research|Industry\\\"\\n}\"}] }}"
+            },
+            {
+              "name": "temperature",
+              "value": "0.7"
+            },
+            {
+              "name": "max_tokens",
+              "value": "2000"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "http-claude-rewrite",
+      "name": "Claude: Rewrite Article",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1450, 400],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Claude response and calculate read time\nconst response = $input.item.json;\nconst originalData = $input.item.json;\n\nlet rewrittenArticle;\ntry {\n  const content = response.choices[0].message.content;\n  // Extract JSON from markdown code block if present\n  const jsonMatch = content.match(/```json\\n([\\s\\S]*?)\\n```/) || content.match(/({[\\s\\S]*})/);\n  if (jsonMatch) {\n    rewrittenArticle = JSON.parse(jsonMatch[1] || jsonMatch[0]);\n  } else {\n    rewrittenArticle = JSON.parse(content);\n  }\n} catch (e) {\n  throw new Error('Failed to parse Claude response: ' + e.message);\n}\n\n// Calculate read time\nconst wordCount = rewrittenArticle.content.split(/\\s+/).length;\nconst readTimeMinutes = Math.ceil(wordCount / 200);\nconst readTime = `${readTimeMinutes} min read`;\n\n// Generate slug from title\nconst slug = rewrittenArticle.title\n  .toLowerCase()\n  .replace(/[^a-z0-9]+/g, '-')\n  .replace(/^-|-$/g, '')\n  .substring(0, 60);\n\nconst postId = Date.now().toString();\n\nreturn {\n  json: {\n    id: postId,\n    slug,\n    title: rewrittenArticle.title,\n    snippet: rewrittenArticle.snippet,\n    content: rewrittenArticle.content,\n    category: rewrittenArticle.category,\n    readTime,\n    wordCount,\n    source: originalData.source,\n    originalLink: originalData.link,\n    publishedAt: new Date().toISOString(),\n    keyConcept: originalData.keyConcept,\n    toneFlag: originalData.toneFlag\n  }\n};"
+      },
+      "id": "code-parse-claude",
+      "name": "Parse & Calculate Read Time",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1650, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "gpt-image-1.5"
+            },
+            {
+              "name": "prompt",
+              "value": "={{ \"Abstract editorial illustration representing \" + $json.keyConcept + \", vibrant neon accents, minimalist tech aesthetic, professional, high contrast\" }}"
+            },
+            {
+              "name": "quality",
+              "value": "high"
+            },
+            {
+              "name": "size",
+              "value": "1536x1024"
+            },
+            {
+              "name": "n",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "http-openai-image",
+      "name": "OpenAI: Generate Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1850, 400],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "http-download-image",
+      "name": "Download Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2050, 400]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ '/home/ec2-user/clawd/pulse-ai/public/images/' + $('Parse & Calculate Read Time').item.json.id + '.jpg' }}",
+        "options": {}
+      },
+      "id": "file-save-image",
+      "name": "Save Image to Disk",
+      "type": "n8n-nodes-base.writeFile",
+      "typeVersion": 1,
+      "position": [2250, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build complete post object\nconst postData = $('Parse & Calculate Read Time').item.json;\nconst imageId = postData.id;\n\nconst post = {\n  id: postData.id,\n  slug: postData.slug,\n  title: postData.title,\n  snippet: postData.snippet,\n  content: postData.content,\n  category: postData.category,\n  readTime: postData.readTime,\n  image: `/images/${imageId}.jpg`,\n  source: postData.source,\n  originalLink: postData.originalLink,\n  publishedAt: postData.publishedAt\n};\n\nreturn { json: { post } };"
+      },
+      "id": "code-build-post",
+      "name": "Build Post Object",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2450, 400]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "multiplex",
+        "options": {}
+      },
+      "id": "merge-all-posts",
+      "name": "Collect All Posts",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [2650, 400]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "filePath": "/home/ec2-user/clawd/pulse-ai/public/posts/posts.json",
+        "options": {}
+      },
+      "id": "file-read-posts",
+      "name": "Read Existing Posts",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [2650, 550],
+      "continueOnFail": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge new posts with existing posts, maintain max 50\nconst newPosts = $input.first().json;\nlet existingPosts = [];\n\ntry {\n  const existingData = $('Read Existing Posts').first().json.data;\n  if (existingData) {\n    existingPosts = JSON.parse(existingData);\n  }\n} catch (e) {\n  console.log('No existing posts or error reading:', e.message);\n  existingPosts = [];\n}\n\n// Combine: new posts first\nconst allPosts = [...$input.all().map(item => item.json.post), ...existingPosts];\n\n// Remove duplicates by ID\nconst uniquePosts = [];\nconst seenIds = new Set();\n\nfor (const post of allPosts) {\n  if (!seenIds.has(post.id)) {\n    uniquePosts.push(post);\n    seenIds.add(post.id);\n  }\n}\n\n// Sort by publishedAt (newest first)\nuniquePosts.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));\n\n// Keep max 50\nconst finalPosts = uniquePosts.slice(0, 50);\n\nreturn {\n  json: {\n    posts: finalPosts,\n    newPostCount: $input.all().length\n  }\n};"
+      },
+      "id": "code-merge-posts",
+      "name": "Merge & Limit Posts",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2850, 400]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "/home/ec2-user/clawd/pulse-ai/public/posts/posts.json",
+        "data": "={{ JSON.stringify($json.posts, null, 2) }}",
+        "options": {}
+      },
+      "id": "file-write-posts",
+      "name": "Write Posts JSON",
+      "type": "n8n-nodes-base.writeFile",
+      "typeVersion": 1,
+      "position": [3050, 400]
+    },
+    {
+      "parameters": {
+        "command": "cd /home/ec2-user/clawd/pulse-ai && git add public/posts/posts.json public/images/*.jpg && git commit -m \"Pulse AI: Added {{ $('Merge & Limit Posts').item.json.newPostCount }} new posts - {{ new Date().toISOString() }}\" && git push origin main",
+        "options": {}
+      },
+      "id": "exec-git-push",
+      "name": "Git Commit & Push",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [3250, 400],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "content": "={{ \"🚀 **Pulse AI Update**\\n\\n✨ Published \" + $('Merge & Limit Posts').item.json.newPostCount + \" new articles\\n\" + $('Merge & Limit Posts').item.json.posts.slice(0, $('Merge & Limit Posts').item.json.newPostCount).map(p => \"\\n📰 **\" + p.title + \"**\\n🔖 \" + p.category + \" • \" + p.readTime).join('\\n') + \"\\n\\n🌐 Live at: https://pulse-ai.vercel.app\" }}",
+        "options": {}
+      },
+      "id": "discord-notify",
+      "name": "Discord Notification",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [3450, 400],
+      "continueOnFail": true,
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "1",
+          "name": "Pulse AI Discord Webhook"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule: Every 3 Hours": {
+      "main": [
+        [
+          {
+            "node": "RSS: OpenAI Blog",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS: MarkTechPost",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS: Hugging Face",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS: TechCrunch AI",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS: VentureBeat AI",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS: Google AI Blog",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS: Anthropic",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP: ArXiv CS.AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP: ArXiv CS.AI": {
+      "main": [
+        [
+          {
+            "node": "Parse ArXiv XML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS: OpenAI Blog": {
+      "main": [
+        [
+          {
+            "node": "Merge All Sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS: MarkTechPost": {
+      "main": [
+        [
+          {
+            "node": "Merge All Sources",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "RSS: Hugging Face": {
+      "main": [
+        [
+          {
+            "node": "Merge All Sources",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "RSS: TechCrunch AI": {
+      "main": [
+        [
+          {
+            "node": "Merge All Sources",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "RSS: VentureBeat AI": {
+      "main": [
+        [
+          {
+            "node": "Merge All Sources",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "RSS: Google AI Blog": {
+      "main": [
+        [
+          {
+            "node": "Merge All Sources",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "RSS: Anthropic": {
+      "main": [
+        [
+          {
+            "node": "Merge All Sources",
+            "type": "main",
+            "index": 6
+          }
+        ]
+      ]
+    },
+    "Parse ArXiv XML": {
+      "main": [
+        [
+          {
+            "node": "Merge All Sources",
+            "type": "main",
+            "index": 7
+          }
+        ]
+      ]
+    },
+    "Merge All Sources": {
+      "main": [
+        [
+          {
+            "node": "Aggregate & Filter Top 5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate & Filter Top 5": {
+      "main": [
+        [
+          {
+            "node": "Sentiment Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sentiment Analysis": {
+      "main": [
+        [
+          {
+            "node": "Claude: Rewrite Article",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Rewrite Article": {
+      "main": [
+        [
+          {
+            "node": "Parse & Calculate Read Time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse & Calculate Read Time": {
+      "main": [
+        [
+          {
+            "node": "OpenAI: Generate Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI: Generate Image": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Save Image to Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Image to Disk": {
+      "main": [
+        [
+          {
+            "node": "Build Post Object",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Post Object": {
+      "main": [
+        [
+          {
+            "node": "Collect All Posts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect All Posts": {
+      "main": [
+        [
+          {
+            "node": "Merge & Limit Posts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Existing Posts": {
+      "main": [
+        [
+          {
+            "node": "Merge & Limit Posts",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge & Limit Posts": {
+      "main": [
+        [
+          {
+            "node": "Write Posts JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Posts JSON": {
+      "main": [
+        [
+          {
+            "node": "Git Commit & Push",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git Commit & Push": {
+      "main": [
+        [
+          {
+            "node": "Discord Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-15T00:00:00.000Z",
+  "versionId": "1"
+}
