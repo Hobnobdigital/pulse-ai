@@ -75,9 +75,9 @@ def main():
     # Run immediately on start
     run_monitor()
     
-    # Then run every 4 hours (6 times/day for ~6 articles)
+    # Then run every 2 hours (12 times/day, you pick ~6 to publish)
     while True:
-        time.sleep(14400)  # Sleep for 4 hours
+        time.sleep(7200)  # Sleep for 2 hours
         run_monitor()
 
 if __name__ == "__main__":

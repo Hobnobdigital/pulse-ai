@@ -1,0 +1,14 @@
+{
+  "last_check": "2026-02-06T08:46:11.237915",
+  "articles": [
+    {
+      "source": "ArXiv CS.AI",
+      "title": "From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents",
+      "link": "https://arxiv.org/abs/2602.04326",
+      "description": "arXiv:2602.04326v1 Announce Type: new \nAbstract: Embodied agents operating in multi-agent, partially observable, and decentralized environments must plan and act despite pervasive uncertainty about hidden objects and collaborators' intentions. Recent advances in applying Large Language Models (LLMs)...",
+      "pub_date": "2026-02-06T05:00:00",
+      "relevance": 24
+    }
+  ],
+  "pending_approval": true
+}

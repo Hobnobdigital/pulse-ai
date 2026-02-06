@@ -1,0 +1,30 @@
+📰 PULSE AI - ARTICLES READY FOR REVIEW
+Generated: 2026-02-06 08:47 UTC
+Total Drafts: 1
+
+
+============================================================
+ARTICLE #1 🎭
+============================================================
+
+TITLE: Uncertainty-Aware LLMs: Agents Navigating the Fog of War
+CATEGORY: LLMs
+READ TIME: 5 min read
+TONE: witty
+SOURCE: ArXiv CS.AI
+IMAGE: /images/uncertainty-aware-llms-agents-navigating-the-fog-o-1770367627.png
+
+EXCERPT:
+Researchers have developed a new approach that empowers embodied AI agents to plan and act amidst the pervasive uncertainty of partially observable, decentralized environments. This marks a major step forward in making large language models (LLMs) more robust and reliable for real-world applications.
+
+CONTENT:
+Imagine a group of AI agents tasked with exploring an unknown, hostile environment - a shadowy labyrinth where crucial intel and valuable resources lie hidden, while unseen adversaries lurk in the gloom. Sound like the setup for the next big-budget military sci-fi thriller? In fact, it's the very real challenge facing the researchers behind a groundbreaking new paper from ArXiv.
+
+Their work, titled "From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied A...
+
+---
+
+COMMANDS:
+  python3 publish-draft.py 1,2,3    - Publish articles 1, 2, and 3
+  python3 publish-draft.py all      - Publish all drafts
+  python3 publish-draft.py skip     - Discard all drafts
