@@ -1,59 +1,66 @@
 # Pulse AI - Auto-Generation Workflow
 
-## ✅ UPDATED: 6 Articles/Day Target
+## ✅ Every 2 Hours - You Decide What to Publish
 
-### New Workflow:
+### Workflow:
 
 ```
-Every 4 Hours (6 times/day):
+Every 2 Hours (12 times/day):
     ↓
 Check 15 RSS Sources
     ↓
-Find Best AI Article (from last 4 hours)
+Find Best Articles (from last 2 hours)
     ↓
 AUTO-REWRITE with Claude (witty/educational tone)
 AUTO-GENERATE image with GPT-Image-1.5
     ↓
-Save Draft for Your Review
+Save Drafts for Your Review
     ↓
-You Review → Approve/Publish
+YOU DECIDE → Publish or Skip
 ```
 
-### What Happens Now:
+### How It Works:
 
-1. **Monitoring** (FREE) - Checks 15 sources every 4 hours
-2. **Auto-Generation** - When articles found:
-   - ✅ Claude rewrites immediately (witty tone for fun topics, serious for sensitive)
-   - ✅ OpenAI generates photorealistic image
-   - ✅ Saves as draft
-3. **Your Review** - I notify you with full drafts
-4. **You Publish** - Review and approve what you like
+1. **Every 2 hours** - Checks 15 sources for new AI articles
+2. **Auto-generates** - Rewrites with Claude + generates image immediately
+3. **You review** - I notify you with full drafts
+4. **You decide** - Publish what you like, skip what you don't
+5. **Target** - ~6 articles/day published (from ~24 options)
 
 ### Tone Detection:
 
 **Witty Tone (default):**
-- Product launches
-- Technical breakthroughs  
-- Industry trends
-- Fun AI applications
+- Product launches, breakthroughs, trends, fun applications
 
 **Serious Tone (auto-detected):**
-- AI safety concerns
-- Ethics & bias
-- Job displacement
-- Privacy/security breaches
-- Regulation/policy
+- AI safety, ethics, bias, job displacement, privacy, regulation
+
+### Schedule (12 Checks/Day):
+
+| Run | Time (UTC) | You Decide |
+|-----|------------|------------|
+| 1 | 8:30 AM | Keep or skip |
+| 2 | 10:30 AM | Keep or skip |
+| 3 | 12:30 PM | Keep or skip |
+| 4 | 2:30 PM | Keep or skip |
+| 5 | 4:30 PM | Keep or skip |
+| 6 | 6:30 PM | Keep or skip |
+| 7 | 8:30 PM | Keep or skip |
+| 8 | 10:30 PM | Keep or skip |
+| 9 | 12:30 AM | Keep or skip |
+| 10 | 2:30 AM | Keep or skip |
+| 11 | 4:30 AM | Keep or skip |
+| 12 | 6:30 AM | Keep or skip |
+
+**You pick ~6 per day from ~24 options!**
 
 ### Cost:
 
-**Per Article Generated:**
-- Claude Haiku: $0.003
-- GPT-Image-1.5: $0.04
-- **Total: ~$0.043 per draft**
+**Per draft generated:** ~$0.043 (Claude + Image)  
+**~24 drafts/day × $0.043 = ~$1.03/day**  
+**Monthly: ~$31/month** (if you review all)
 
-**Target: 6 articles/day × $0.043 = ~$7.74/month**
-
-You review all 6 daily drafts, publish your favorites!
+You only publish what you approve!
 
 ### Commands:
 
@@ -64,7 +71,8 @@ cat /home/ec2-user/clawd/pulse-ai/.review-digest.txt
 
 **Publish selected:**
 ```bash
-python3 publish-draft.py 1,2,5
+python3 publish-draft.py 1    # publish article #1
+python3 publish-draft.py 1,2  # publish articles 1 and 2
 ```
 
 **Publish all:**
@@ -79,31 +87,19 @@ python3 publish-draft.py skip
 
 ### Files:
 
-- `rss-monitor.py` - Finds new articles
+- `rss-monitor.py` - Checks every 2 hours
 - `generate-drafts.py` - Auto-writes with Claude + images
-- `publish-draft.py` - Publishes approved articles
-- `.article-drafts.json` - Drafts waiting for review
-- `.review-digest.txt` - Human-readable draft summary
-
-### Schedule (6 Articles/Day Target):
-
-| Run # | Time (UTC) |
-|-------|------------|
-| 1 | ~8:30 AM |
-| 2 | ~12:30 PM |
-| 3 | ~4:30 PM |
-| 4 | ~8:30 PM |
-| 5 | ~12:30 AM |
-| 6 | ~4:30 AM |
+- `publish-draft.py` - Publishes your approved articles
+- `.review-digest.txt` - Drafts ready for your review
 
 ### Status:
 
-- ✅ Daemon running (PID: 233176)
-- ✅ Auto-generation enabled
-- ✅ Schedule: Every 4 hours (6×/day)
-- ✅ Target: ~6 articles/day
-- ✅ Next check: ~12:30 PM UTC
+- ✅ Daemon running (PID: 233509)
+- ✅ Checks every 2 hours (12×/day)
+- ✅ You decide what to publish
+- ✅ Target: ~6 published/day
+- ✅ Next check: ~10:30 AM UTC
 
 ---
 
-**Ready! You'll receive ~6 draft articles per day for review.** 🚀
+**Ready! You'll receive draft articles every 2 hours. You pick what to publish!** 🚀
