@@ -33,15 +33,38 @@ def run_monitor():
     except Exception as e:
         print(f"Error running monitor: {e}")
 
+def auto_generate_articles():
+    """Auto-generate articles with Claude when found"""
+    import subprocess
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M')}] 🤖 Auto-generating articles...")
+    
+    try:
+        result = subprocess.run(
+            ['python3', '/home/ec2-user/clawd/pulse-ai/generate-drafts.py'],
+            capture_output=True,
+            text=True,
+            timeout=600  # 10 minute timeout for generation
+        )
+        
+        print(result.stdout)
+        if result.stderr:
+            print(f"Generation warnings: {result.stderr}")
+            
+    except Exception as e:
+        print(f"Error auto-generating: {e}")
+
 def send_discord_notification(message):
     """Send notification to Discord (placeholder for now)"""
     # This will be implemented to send to your Discord channel
-    # For now, just log to file
+    # For now, just log to file and auto-generate
     with open('/home/ec2-user/clawd/pulse-ai/.notifications.log', 'a') as f:
         f.write(f"\n{'='*60}\n")
         f.write(f"NOTIFICATION: {datetime.now().isoformat()}\n")
         f.write(message)
         f.write("\n")
+    
+    # Auto-trigger article generation
+    auto_generate_articles()
 
 def main():
     print("🚀 Pulse AI RSS Monitor Daemon Started")
