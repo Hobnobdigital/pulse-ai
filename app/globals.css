@@ -6,14 +6,6 @@
   html {
     scroll-behavior: smooth;
   }
-  
-  body {
-    @apply font-body;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
-  }
 }
 
 @layer utilities {
@@ -30,7 +22,10 @@
   }
 
   .text-gradient-neon {
-    @apply bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-yellow bg-clip-text text-transparent;
+    background: linear-gradient(to right, #00FFAA, #FF00FF, #FFDD00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .border-gradient {

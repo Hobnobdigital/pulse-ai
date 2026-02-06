@@ -1,6 +1,6 @@
 [
   {
-    "id": "1770337281582",
+    "id": "1770337493605",
     "slug": "gpt-5-rumors-heat-up-what-we-know-so-far",
     "title": "GPT-5 Rumors Heat Up: What We Know So Far",
     "snippet": "OpenAI's next flagship model might be closer than we think. Industry insiders hint at major improvements in reasoning and multimodal capabilities.",
@@ -10,10 +10,10 @@
     "image": "/images/sample-1.jpg",
     "source": "OpenAI Blog",
     "originalLink": "https://openai.com/blog",
-    "publishedAt": "2026-02-05T22:21:21.573Z"
+    "publishedAt": "2026-02-05T22:24:53.596Z"
   },
   {
-    "id": "1770337280582",
+    "id": "1770337492605",
     "slug": "anthropic-s-constitutional-ai-the-ethics-revolution-we-neede",
     "title": "Anthropic's Constitutional AI: The Ethics Revolution We Needed?",
     "snippet": "Claude's unique training approach promises AI that's helpful, harmless, and honest. But can rules-based alignment really scale?",
@@ -23,10 +23,10 @@
     "image": "/images/sample-2.jpg",
     "source": "Anthropic",
     "originalLink": "https://www.anthropic.com/news",
-    "publishedAt": "2026-02-05T19:21:21.577Z"
+    "publishedAt": "2026-02-05T19:24:53.600Z"
   },
   {
-    "id": "1770337279582",
+    "id": "1770337491605",
     "slug": "stable-diffusion-3-5-drops-and-it-s-open-source",
     "title": "Stable Diffusion 3.5 Drops—And It's Open Source",
     "snippet": "Stability AI's latest image model rivals Midjourney and DALL·E 3, but you can run it on your own hardware. Game changer.",
@@ -36,10 +36,10 @@
     "image": "/images/sample-3.jpg",
     "source": "Hugging Face",
     "originalLink": "https://huggingface.co/blog",
-    "publishedAt": "2026-02-05T16:21:21.577Z"
+    "publishedAt": "2026-02-05T16:24:53.600Z"
   },
   {
-    "id": "1770337278582",
+    "id": "1770337490605",
     "slug": "google-s-gemini-2-0-multimodal-ai-done-right",
     "title": "Google's Gemini 2.0: Multimodal AI Done Right?",
     "snippet": "After a rocky start, Google's AI model finally delivers on its promise. Native video understanding and real-time processing set new benchmarks.",
@@ -49,10 +49,10 @@
     "image": "/images/sample-4.jpg",
     "source": "Google AI Blog",
     "originalLink": "https://blog.google/technology/ai/",
-    "publishedAt": "2026-02-05T12:21:21.577Z"
+    "publishedAt": "2026-02-05T12:24:53.600Z"
   },
   {
-    "id": "1770337277582",
+    "id": "1770337489605",
     "slug": "why-your-llm-hallucinates-and-how-researchers-are-fixing-it",
     "title": "Why Your LLM Hallucinates (And How Researchers Are Fixing It)",
     "snippet": "New paper from Stanford reveals the root cause of AI 'hallucinations' and proposes elegant solutions. The fix might surprise you.",
@@ -62,6 +62,6 @@
     "image": "/images/sample-5.jpg",
     "source": "ArXiv",
     "originalLink": "https://arxiv.org/",
-    "publishedAt": "2026-02-05T06:21:21.577Z"
+    "publishedAt": "2026-02-05T06:24:53.600Z"
   }
 ]
