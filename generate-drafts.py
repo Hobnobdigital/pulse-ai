@@ -147,7 +147,7 @@ def process_articles():
         print("No new articles found")
         return
     
-    print(f"📝 Found {len(articles)} article(s) from 2-hour window\n")
+    print(f"📝 Found {len(articles)} article(s) from 1-hour window\n")
     
     drafts = []
     

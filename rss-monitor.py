@@ -61,8 +61,8 @@ def fetch_feed(name, url):
         return []
 
 def check_new_articles():
-    """Check all sources for new articles from last 2 hours (12 checks/day, you pick ~6)"""
-    two_hours_ago = datetime.now() - timedelta(hours=2)
+    """Check all sources for new articles from last 1 hour (24 checks/day, you pick ~6)"""
+    one_hour_ago = datetime.now() - timedelta(hours=1)
     all_articles = []
     
     print(f"🔍 Checking {len(RSS_SOURCES)} sources at {datetime.now().strftime('%Y-%m-%d %H:%M')}...")
@@ -78,7 +78,7 @@ def check_new_articles():
             elif hasattr(entry, 'updated_parsed') and entry.updated_parsed:
                 pub_date = datetime(*entry.updated_parsed[:6])
             
-            if pub_date and pub_date >= two_hours_ago:
+            if pub_date and pub_date >= one_hour_ago:
                 title = entry.get('title', 'No title')
                 link = entry.get('link', '')
                 description = entry.get('summary', '')[:300] + '...' if len(entry.get('summary', '')) > 300 else entry.get('summary', '')
@@ -108,10 +108,10 @@ def format_digest(articles):
     
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M UTC')
     
-    message = f"📰 **Pulse AI - 2-Hour Digest** ({timestamp})\n"
-    message += f"Schedule: Every 2hrs (12 checks/day) | You pick ~6 to publish\n\n"
+    message = f"📰 **Pulse AI - 1-Hour Digest** ({timestamp})\n"
+    message += f"Schedule: Every 1hr (24 checks/day) | You pick ~6 to publish\n\n"
     
-    for i, article in enumerate(articles[:2], 1):  # Top 2 per 2-hour window
+    for i, article in enumerate(articles[:1], 1):  # Top 1 per hour
         relevance_emoji = "🔥" if article['relevance'] >= 20 else "📌" if article['relevance'] >= 10 else "📄"
         message += f"{i}. {relevance_emoji} **{article['title']}**\n"
         message += f"   Source: {article['source']} | Score: {article['relevance']}/100\n"
