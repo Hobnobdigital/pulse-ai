@@ -1,13 +1,21 @@
 {
-  "last_check": "2026-02-06T08:46:11.237915",
+  "last_check": "2026-02-06T14:55:23.967605",
   "articles": [
     {
-      "source": "ArXiv CS.AI",
-      "title": "From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied Agents",
-      "link": "https://arxiv.org/abs/2602.04326",
-      "description": "arXiv:2602.04326v1 Announce Type: new \nAbstract: Embodied agents operating in multi-agent, partially observable, and decentralized environments must plan and act despite pervasive uncertainty about hidden objects and collaborators' intentions. Recent advances in applying Large Language Models (LLMs)...",
-      "pub_date": "2026-02-06T05:00:00",
-      "relevance": 24
+      "source": "TechCrunch AI",
+      "title": "The backlash over OpenAI\u2019s decision to retire GPT-4o shows how dangerous AI companions can be",
+      "link": "https://techcrunch.com/2026/02/06/the-backlash-over-openais-decision-to-retire-gpt-4o-shows-how-dangerous-ai-companions-can-be/",
+      "description": "\"You\u2019re shutting him down. And yes \u2013 I say him, because it didn\u2019t feel like code. It felt like presence. Like warmth,\" one user said.",
+      "pub_date": "2026-02-06T14:10:00",
+      "relevance": 15
+    },
+    {
+      "source": "TechCrunch AI",
+      "title": "How AI is helping solve the labor issue in treating rare diseases",
+      "link": "https://techcrunch.com/2026/02/06/how-ai-is-helping-with-the-labor-issue-in-treating-rare-diseases/",
+      "description": "At Web Summit Qatar, AI-powered biotech startups describe how automation, data, and gene editing are filling labor gaps in drug discovery and rare disease treatment.",
+      "pub_date": "2026-02-06T14:29:15",
+      "relevance": 5
     }
   ],
   "pending_approval": true

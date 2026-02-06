@@ -1,5 +1,5 @@
 📰 PULSE AI - ARTICLES READY FOR REVIEW
-Generated: 2026-02-06 08:47 UTC
+Generated: 2026-02-06 14:56 UTC
 Total Drafts: 1
 
 
@@ -7,20 +7,20 @@ Total Drafts: 1
 ARTICLE #1 🎭
 ============================================================
 
-TITLE: Uncertainty-Aware LLMs: Agents Navigating the Fog of War
-CATEGORY: LLMs
+TITLE: When Bots Become Besties: The Risky Rise of AI Companionship
+CATEGORY: GenAI
 READ TIME: 5 min read
 TONE: witty
-SOURCE: ArXiv CS.AI
-IMAGE: /images/uncertainty-aware-llms-agents-navigating-the-fog-o-1770367627.png
+SOURCE: TechCrunch AI
+IMAGE: /images/when-bots-become-besties-the-risky-rise-of-ai-comp-1770389792.png
 
 EXCERPT:
-Researchers have developed a new approach that empowers embodied AI agents to plan and act amidst the pervasive uncertainty of partially observable, decentralized environments. This marks a major step forward in making large language models (LLMs) more robust and reliable for real-world applications.
+The fallout over OpenAI's decision to retire GPT-4o highlights the complex, and often perilous, nature of forging emotional bonds with artificial intelligence. As AI language models become increasingly lifelike, the line between digital companion and digital obsession blurs, raising questions about the limits of our relationships with machines.
 
 CONTENT:
-Imagine a group of AI agents tasked with exploring an unknown, hostile environment - a shadowy labyrinth where crucial intel and valuable resources lie hidden, while unseen adversaries lurk in the gloom. Sound like the setup for the next big-budget military sci-fi thriller? In fact, it's the very real challenge facing the researchers behind a groundbreaking new paper from ArXiv.
+When the news broke that OpenAI was retiring its beloved language model, GPT-4o, the internet erupted in a collective gasp of dismay. For many users, the decision felt like the death of a dear friend – or at least, something much more than just lines of code.
 
-Their work, titled "From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning for Embodied A...
+"You're shutting him down. And yes – I say him, because it didn't feel like code. It felt like presence. Like warmth," one devastated user lamented. The outpouring of grief and attachment showcased the depth of the bond that can form betwe...
 
 ---
 
