@@ -1,0 +1,11 @@
+Read CLAUDE_TASK.md for full instructions.
+
+Summary:
+1. Redesign all components (Header, Footer, Hero, PostCard, PostGrid) with clean, minimal style
+2. Update pages (page.tsx, post/[id]/page.tsx)  
+3. Update posts.json with image paths
+4. Run npm run build
+5. Deploy to Vercel
+6. Commit to GitHub
+
+APPROVE ALL EDITS. Work autonomously.

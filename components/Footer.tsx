@@ -4,64 +4,62 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default function Footer() {
-  const socialLinks = [
-    { name: 'Twitter', href: '#', icon: '𝕏' },
-    { name: 'LinkedIn', href: '#', icon: 'in' },
-    { name: 'GitHub', href: '#', icon: 'gh' },
-  ];
-
   return (
-    <footer className="border-t border-black/10 mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="border-t border-border mt-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-display font-bold mb-4">
+            <h3 className="text-2xl font-[var(--font-display)] font-bold mb-3">
               PULSE<span className="text-neon-cyan">.</span>AI
             </h3>
-            <p className="text-gray-600 text-sm">
-              Your daily dose of AI intelligence. Curated with precision, delivered with clarity.
+            <p className="text-ink-muted text-sm font-[var(--font-body)] leading-relaxed max-w-xs">
+              Your daily dose of AI intelligence. Curated with precision,
+              delivered with clarity.
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Links */}
           <div>
-            <h4 className="font-display font-semibold mb-4">Explore</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="text-gray-600 hover:text-neon-cyan transition-colors">
-                  Latest Posts
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-600 hover:text-neon-magenta transition-colors">
-                  Research
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-600 hover:text-neon-yellow transition-colors">
-                  Industry News
-                </Link>
-              </li>
-              <li>
-                <Link href="/rss" className="text-gray-600 hover:text-neon-cyan transition-colors">
-                  RSS Feed
-                </Link>
-              </li>
+            <h4 className="font-[var(--font-display)] font-semibold mb-4 text-sm uppercase tracking-wider text-ink-faint">
+              Explore
+            </h4>
+            <ul className="space-y-2.5 text-sm">
+              {[
+                { label: 'Latest Posts', href: '/', color: 'hover:text-neon-cyan' },
+                { label: 'Research', href: '#', color: 'hover:text-neon-magenta' },
+                { label: 'Industry News', href: '#', color: 'hover:text-neon-yellow' },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className={`text-ink-muted ${link.color} transition-colors duration-200`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Social */}
           <div>
-            <h4 className="font-display font-semibold mb-4">Connect</h4>
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
+            <h4 className="font-[var(--font-display)] font-semibold mb-4 text-sm uppercase tracking-wider text-ink-faint">
+              Connect
+            </h4>
+            <div className="flex gap-3">
+              {[
+                { name: 'Twitter', icon: '𝕏' },
+                { name: 'LinkedIn', icon: 'in' },
+                { name: 'GitHub', icon: 'gh' },
+              ].map((social) => (
                 <motion.a
                   key={social.name}
-                  href={social.href}
-                  whileHover={{ scale: 1.1, y: -2 }}
+                  href="#"
+                  whileHover={{ scale: 1.08, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 flex items-center justify-center border-2 border-black/20 rounded-lg hover:border-neon-cyan hover:neon-glow-cyan transition-all font-display font-bold"
+                  className="w-10 h-10 flex items-center justify-center rounded-lg border border-border text-ink-muted hover:border-neon-cyan hover:text-neon-cyan hover:neon-glow-cyan transition-all duration-200 font-[var(--font-display)] font-bold text-sm"
+                  aria-label={social.name}
                 >
                   {social.icon}
                 </motion.a>
@@ -70,21 +68,21 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-500 font-display">
-            © 2026 Pulse AI. All rights reserved.
+        {/* Bottom */}
+        <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-ink-faint font-[var(--font-display)]">
+            &copy; 2026 Pulse AI. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="#" className="text-sm text-gray-500 hover:text-neon-cyan transition-colors">
-              Privacy
-            </Link>
-            <Link href="#" className="text-sm text-gray-500 hover:text-neon-magenta transition-colors">
-              Terms
-            </Link>
-            <Link href="#" className="text-sm text-gray-500 hover:text-neon-yellow transition-colors">
-              Contact
-            </Link>
+          <div className="flex gap-6">
+            {['Privacy', 'Terms', 'Contact'].map((label) => (
+              <Link
+                key={label}
+                href="#"
+                className="text-xs text-ink-faint hover:text-ink-muted transition-colors"
+              >
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import PostGrid from '@/components/PostGrid';
+import NewsletterSignup from '@/components/NewsletterSignup';
 import postsData from '@/public/posts/posts.json';
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Hero post={featuredPost} />
       <PostGrid posts={otherPosts} />
+      <NewsletterSignup />
     </>
   );
 }

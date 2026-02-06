@@ -1,0 +1,38 @@
+MISSION: Complete world-class redesign of Pulse AI website.
+
+DESIGN TARGET: The Rundown AI aesthetic - clean, minimal, professional, newsletter-style.
+
+REQUIREMENTS:
+1. Use existing design system (tailwind.config.ts already has slate/indigo colors, Space Grotesk + Newsreader fonts)
+2. Redesign ALL components with clean, minimal style:
+   - Header.tsx - simple logo, nav, email signup
+   - Footer.tsx - minimal links, copyright
+   - Hero.tsx - large headline, subtitle, email CTA
+   - PostCard.tsx - card with image, title, excerpt, category
+   - PostGrid.tsx - responsive grid
+3. Update pages:
+   - app/page.tsx - hero + post grid
+   - app/post/[id]/page.tsx - article layout with hero image
+4. Update public/posts/posts.json with correct image paths for all 5 articles
+5. Integrate all 5 images:
+   - GPT-5: 001-hyper-realistic-photo-of-a-sleek-modern-.png
+   - Anthropic: 001-hyper-realistic-photo-of-anthropic-const.png
+   - Stable Diffusion: 001-hyper-realistic-photo-of-stable-diffusio.png
+   - Gemini: 001-hyper-realistic-photo-of-google-gemini-a.png
+   - Hallucinations: 001-hyper-realistic-photo-of-a-modern-ai-res.png
+6. Run npm run build and fix any errors
+7. Deploy to Vercel for public URL
+8. Commit all changes to GitHub
+
+DESIGN PRINCIPLES:
+- White/light backgrounds
+- Slate/indigo color scheme
+- Generous whitespace
+- Subtle shadows
+- Card-based layouts
+- Perfect mobile responsiveness
+
+WORK AUTONOMOUSLY. APPROVE ALL FILE EDITS. MAKE IT WORLD-CLASS.
+
+When COMPLETELY finished, run:
+clawdbot gateway wake --text "REDESIGN COMPLETE: Pulse AI world-class redesign done. Vercel URL live." --mode now

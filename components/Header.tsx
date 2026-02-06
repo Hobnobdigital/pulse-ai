@@ -1,87 +1,149 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Header() {
-  const [email, setEmail] = useState('');
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // UI only for now
-    alert('Email signup coming soon!');
-    setEmail('');
-  };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
 
   return (
-    <motion.header
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-black/10"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative"
+    <>
+      <motion.header
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/90 backdrop-blur-xl border-b border-border shadow-soft'
+            : 'bg-white/60 backdrop-blur-sm'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center group">
+              <motion.div whileHover={{ scale: 1.03 }} className="relative">
+                <span className="text-2xl md:text-3xl font-[var(--font-display)] font-bold tracking-tight">
+                  PULSE<span className="text-neon-cyan">.</span>AI
+                </span>
+                <div className="absolute -bottom-1 left-0 h-[2px] w-0 bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-yellow group-hover:w-full transition-all duration-500" />
+              </motion.div>
+            </Link>
+
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex items-center gap-8">
+              {[
+                { label: 'Latest', href: '/', color: 'hover:text-neon-cyan' },
+                { label: 'Research', href: '#', color: 'hover:text-neon-magenta' },
+                { label: 'Industry', href: '#', color: 'hover:text-neon-yellow' },
+              ].map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`text-sm font-[var(--font-display)] font-medium text-ink-muted ${link.color} transition-colors duration-200`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              <Link
+                href="#newsletter"
+                className="ml-2 px-5 py-2 bg-ink text-white text-sm font-[var(--font-display)] font-semibold rounded-lg hover:bg-neon-cyan hover:text-ink transition-all duration-200"
+              >
+                Subscribe
+              </Link>
+            </nav>
+
+            {/* Mobile Hamburger */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden relative w-10 h-10 flex items-center justify-center"
+              aria-label="Toggle menu"
             >
-              <span className="text-3xl font-display font-bold tracking-tight">
-                PULSE<span className="text-neon-cyan">.</span>AI
-              </span>
-              <motion.div
-                className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-yellow"
-                initial={{ width: 0 }}
-                whileHover={{ width: '100%' }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
-          </Link>
-
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-sm font-display font-medium hover:text-neon-cyan transition-colors">
-              Latest
-            </Link>
-            <Link href="#" className="text-sm font-display font-medium hover:text-neon-magenta transition-colors">
-              Research
-            </Link>
-            <Link href="#" className="text-sm font-display font-medium hover:text-neon-yellow transition-colors">
-              Industry
-            </Link>
-          </nav>
-
-          {/* Email Signup */}
-          <form onSubmit={handleSubmit} className="hidden lg:flex items-center">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="px-4 py-2 border-2 border-black/20 rounded-l-lg focus:outline-none focus:border-neon-cyan transition-colors text-sm font-display"
-              required
-            />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              type="submit"
-              className="px-6 py-2 bg-black text-white font-display font-medium rounded-r-lg hover:bg-neon-cyan hover:text-black transition-all border-2 border-black text-sm"
-            >
-              Subscribe
-            </motion.button>
-          </form>
-
-          {/* Mobile menu button */}
-          <button className="md:hidden p-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+              <div className="relative w-6 h-5">
+                <span
+                  className={`absolute left-0 h-[2px] w-6 bg-ink transition-all duration-300 ${
+                    mobileOpen ? 'top-[9px] rotate-45' : 'top-0'
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 top-[9px] h-[2px] w-6 bg-ink transition-all duration-300 ${
+                    mobileOpen ? 'opacity-0' : ''
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 h-[2px] w-6 bg-ink transition-all duration-300 ${
+                    mobileOpen ? 'top-[9px] -rotate-45' : 'top-[18px]'
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </div>
-      </div>
-    </motion.header>
+      </motion.header>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center md:hidden"
+          >
+            <nav className="flex flex-col items-center gap-8">
+              {[
+                { label: 'Latest', href: '/' },
+                { label: 'Research', href: '#' },
+                { label: 'Industry', href: '#' },
+              ].map((link, i) => (
+                <motion.div
+                  key={link.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-3xl font-[var(--font-display)] font-bold text-ink hover:text-neon-cyan transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
+                <Link
+                  href="#newsletter"
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-4 px-8 py-3 bg-ink text-white text-lg font-[var(--font-display)] font-semibold rounded-lg"
+                >
+                  Subscribe
+                </Link>
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
