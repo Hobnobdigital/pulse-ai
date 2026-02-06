@@ -147,7 +147,7 @@ def process_articles():
         print("No new articles found")
         return
     
-    print(f"📝 Found {len(articles)} articles to process\n")
+    print(f"📝 Found {len(articles)} article(s) to process (target: 6/day)\n")
     
     drafts = []
     

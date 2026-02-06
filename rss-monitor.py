@@ -61,8 +61,8 @@ def fetch_feed(name, url):
         return []
 
 def check_new_articles():
-    """Check all sources for new articles from last hour"""
-    one_hour_ago = datetime.now() - timedelta(hours=1)
+    """Check all sources for new articles from last 4 hours (targeting ~6 articles/day)"""
+    four_hours_ago = datetime.now() - timedelta(hours=4)
     all_articles = []
     
     print(f"🔍 Checking {len(RSS_SOURCES)} sources at {datetime.now().strftime('%Y-%m-%d %H:%M')}...")
@@ -78,7 +78,7 @@ def check_new_articles():
             elif hasattr(entry, 'updated_parsed') and entry.updated_parsed:
                 pub_date = datetime(*entry.updated_parsed[:6])
             
-            if pub_date and pub_date >= one_hour_ago:
+            if pub_date and pub_date >= four_hours_ago:
                 title = entry.get('title', 'No title')
                 link = entry.get('link', '')
                 description = entry.get('summary', '')[:300] + '...' if len(entry.get('summary', '')) > 300 else entry.get('summary', '')
@@ -98,7 +98,8 @@ def check_new_articles():
     # Sort by relevance (highest first)
     all_articles.sort(key=lambda x: x['relevance'], reverse=True)
     
-    return all_articles
+    # Return top 1 article per run (6 runs/day = ~6 articles/day target)
+    return all_articles[:1]
 
 def format_digest(articles):
     """Format articles for Discord notification"""
@@ -107,17 +108,14 @@ def format_digest(articles):
     
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M UTC')
     
-    message = f"📰 **Pulse AI - Hourly News Digest** ({timestamp})\n"
-    message += f"Found {len(articles)} new AI articles:\n\n"
+    message = f"📰 **Pulse AI - 4-Hour Digest** ({timestamp})\n"
+    message += f"Target: 6 articles/day | Found: {len(articles)} top article(s)\n\n"
     
-    for i, article in enumerate(articles[:8], 1):  # Top 8
+    for i, article in enumerate(articles[:1], 1):  # Top 1 for 6/day target
         relevance_emoji = "🔥" if article['relevance'] >= 20 else "📌" if article['relevance'] >= 10 else "📄"
         message += f"{i}. {relevance_emoji} **{article['title']}**\n"
         message += f"   Source: {article['source']} | Score: {article['relevance']}/100\n"
         message += f"   Link: {article['link']}\n\n"
-    
-    if len(articles) > 8:
-        message += f"... and {len(articles) - 8} more articles\n\n"
     
     message += "\n💡 **Reply with article numbers to publish** (e.g., \"publish 1, 3, 5\")\n"
     message += "Or reply \"skip\" to ignore this batch"
