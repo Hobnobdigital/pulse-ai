@@ -11,14 +11,14 @@ interface PostPageProps {
 }
 
 export async function generateStaticParams() {
-  return postsData.posts.map((post) => ({
+  return postsData.map((post) => ({
     id: post.id,
   }));
 }
 
 export default async function PostPage({ params }: PostPageProps) {
   const { id } = await params;
-  const post = postsData.posts.find((p) => p.id === id);
+  const post = postsData.find((p) => p.id === id);
 
   if (!post) {
     notFound();
