@@ -4,7 +4,7 @@ import NewsletterSignup from '@/components/NewsletterSignup';
 import postsData from '@/public/posts/posts.json';
 
 export default function Home() {
-  const posts = postsData;
+  const posts = postsData.posts;
   const featuredPost = posts[0];
   const otherPosts = posts.slice(1);
 

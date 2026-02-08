@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ScrollProgress from '@/components/ScrollProgress';
 import NewsletterCTA from './NewsletterCTA';
-import postsData from '@/public/posts/posts.json';
+import postsJson from '@/public/posts/posts.json';
+const postsData = postsJson.posts;
 import ReactMarkdown from 'react-markdown';
 
 interface PostPageProps {
