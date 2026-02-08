@@ -17,6 +17,9 @@ export default function Footer() {
               Your daily dose of AI intelligence. Curated with precision,
               delivered with clarity.
             </p>
+            <p className="text-xs text-ink-faint mt-3 font-[var(--font-body)]">
+              Editorial Oversight: <span className="text-ink-muted">Kwame Sarkodee-Adoo</span>
+            </p>
           </div>
 
           {/* Links */}
@@ -29,6 +32,7 @@ export default function Footer() {
                 { label: 'Latest Posts', href: '/', color: 'hover:text-neon-cyan' },
                 { label: 'Research', href: '#', color: 'hover:text-neon-magenta' },
                 { label: 'Industry News', href: '#', color: 'hover:text-neon-yellow' },
+                { label: 'AI Transparency', href: '/ai-transparency', color: 'hover:text-neon-cyan' },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -70,9 +74,17 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-ink-faint font-[var(--font-display)]">
-            &copy; 2026 Pulse AI. All rights reserved.
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-xs text-ink-faint font-[var(--font-display)]">
+              &copy; 2026 Pulse AI. All rights reserved.
+            </p>
+            <p className="text-[10px] text-ink-faint mt-1 max-w-md">
+              🤖 We believe in transparency. Every article discloses its AI usage. 
+              <Link href="/ai-transparency" className="underline hover:text-neon-cyan ml-1">
+                Learn more
+              </Link>
+            </p>
+          </div>
           <div className="flex gap-6">
             {['Privacy', 'Terms', 'Contact'].map((label) => (
               <Link

@@ -2,7 +2,10 @@
 
 **Your daily dose of AI intelligence.** A production-grade AI news aggregation website with Editorial Neon Brutalism aesthetics.
 
-📚 **[Complete Project Wiki →](PROJECT-WIKI.md)** — Start here for comprehensive documentation
+📚 **[Complete Project Wiki →](PROJECT-WIKI.md)** — Start here for comprehensive documentation  
+🔍 **[AI Transparency Policy →](AI-TRANSPARENCY.md)** — How we use AI ethically
+
+> **Editorial Oversight:** All content overseen by **Kwame Sarkodee-Adoo** — committed to transparency, accuracy, and ethical AI journalism.
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
@@ -220,6 +223,30 @@ Inspired by:
 - Modern AI/tech publications
 
 Built with ❤️ by the Pulse AI team.
+
+**Editor-in-Chief & AI Ethics Oversight:** Kwame Sarkodee-Adoo
+
+---
+
+## 🤖 AI Transparency Commitment
+
+Pulse AI believes in **radical transparency** about how we use artificial intelligence:
+
+- ✅ **We disclose AI usage** in every article (see `ai_transparency` metadata)
+- ✅ **Humans make final decisions** — AI assists, never replaces editorial judgment
+- ✅ **Full fact-checking** by human editors on all claims
+- ✅ **Source attribution** — every article links to original sources
+- ✅ **Correction policy** — errors fixed transparently with timestamps
+
+### Article Labels Explained
+
+| Label | Meaning |
+|-------|---------|
+| **🤖 AI-Assisted** | AI helped with research; written and edited by humans |
+| **✍️ Human-Written** | Entirely human-written; AI only used for grammar |
+| **🔍 AI-Researched** | AI gathered sources; human wrote analysis |
+
+**Read our full [AI Transparency Policy →](AI-TRANSPARENCY.md)**
 
 ---
 
