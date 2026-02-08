@@ -105,11 +105,33 @@ export default async function PostPage({ params }: PostPageProps) {
                     {children}
                   </h3>
                 ),
-                p: ({ children }) => (
-                  <p className="mb-6 leading-[1.8] text-[#374151] text-[1.125rem]">
-                    {children}
-                  </p>
-                ),
+                p: ({ children }) => {
+                  // Check for YouTube embed pattern [YOUTUBE:videoId]
+                  const text = typeof children === 'string' ? children : 
+                    Array.isArray(children) ? children.map(c => typeof c === 'string' ? c : '').join('') : '';
+                  const youtubeMatch = text.match(/\[YOUTUBE:([a-zA-Z0-9_-]+)\]/);
+                  if (youtubeMatch) {
+                    const videoId = youtubeMatch[1];
+                    return (
+                      <div className="my-10 rounded-xl overflow-hidden shadow-lg shadow-neon-cyan/10 border border-border">
+                        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                          <iframe
+                            className="absolute inset-0 w-full h-full"
+                            src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
+                            title="YouTube video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
+                      </div>
+                    );
+                  }
+                  return (
+                    <p className="mb-6 leading-[1.8] text-[#374151] text-[1.125rem]">
+                      {children}
+                    </p>
+                  );
+                },
                 blockquote: ({ children }) => (
                   <blockquote className="border-l-4 border-neon-magenta pl-6 my-8 italic text-xl font-[var(--font-body)] text-ink-muted bg-neon-magenta-dim py-4 pr-4 rounded-r-lg">
                     {children}
