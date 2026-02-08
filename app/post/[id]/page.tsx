@@ -65,7 +65,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </h1>
 
           {/* Meta */}
-          <div className="flex items-center gap-4 text-ink-muted font-[var(--font-display)] text-sm mb-10 pb-8 border-b border-border">
+          <div className="flex items-center gap-4 text-ink-muted font-[var(--font-display)] text-sm mb-6 pb-6 border-b border-border">
             <span>
               {new Date(post.published_at).toLocaleDateString('en-US', {
                 month: 'long',
@@ -75,6 +75,19 @@ export default async function PostPage({ params }: PostPageProps) {
             </span>
             <span className="text-border">|</span>
             <span>{post.read_time}</span>
+          </div>
+
+          {/* Editor Credit */}
+          <div className="flex items-center gap-3 mb-10 pb-6 border-b border-border">
+            <div className="w-10 h-10 rounded-full bg-neon-cyan/20 flex items-center justify-center text-neon-cyan font-[var(--font-display)] font-bold">
+              KS
+            </div>
+            <div>
+              <p className="text-sm font-[var(--font-display)] font-semibold text-ink">
+                Kwame Sarkodee-Adoo
+              </p>
+              <p className="text-xs text-ink-muted">Editor-in-Chief</p>
+            </div>
           </div>
 
           {/* Markdown Content */}
@@ -126,6 +139,66 @@ export default async function PostPage({ params }: PostPageProps) {
             >
               {post.content}
             </ReactMarkdown>
+          </div>
+
+          {/* Sources & Transparency */}
+          <div className="mt-12 pt-8 border-t border-border bg-surface-dim/50 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 py-8 rounded-lg">
+            {/* Sources */}
+            {post.source && (
+              <div className="mb-6">
+                <h4 className="text-sm font-[var(--font-display)] font-semibold uppercase tracking-wider text-ink-faint mb-3">
+                  Sources
+                </h4>
+                <p className="text-sm text-ink-muted">
+                  This article was based on reporting from{' '}
+                  <Link 
+                    href={post.original_link || '#'} 
+                    className="text-neon-cyan hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {post.source}
+                  </Link>
+                  . All claims have been independently verified.
+                </p>
+              </div>
+            )}
+
+            {/* About This Article */}
+            <div className="mb-6">
+              <h4 className="text-sm font-[var(--font-display)] font-semibold uppercase tracking-wider text-ink-faint mb-3">
+                About This Article
+              </h4>
+              <div className="text-sm text-ink-muted space-y-2">
+                <p>
+                  <span className="font-semibold text-ink">Research:</span> AI tools monitored news sources; stories selected and verified by editors
+                </p>
+                <p>
+                  <span className="font-semibold text-ink">Writing:</span> AI-generated draft, extensively edited and enhanced by Kwame Sarkodee-Adoo
+                </p>
+                <p>
+                  <span className="font-semibold text-ink">Fact-Checking:</span> All claims verified against reputable sources
+                </p>
+                <p>
+                  <span className="font-semibold text-ink">Published:</span>{' '}
+                  {new Date(post.published_at).toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}
+                </p>
+              </div>
+            </div>
+
+            {/* Transparency Link */}
+            <div className="pt-4 border-t border-border">
+              <p className="text-xs text-ink-faint">
+                🤖 We believe in transparency.{' '}
+                <Link href="/ai-transparency" className="text-neon-cyan hover:underline">
+                  Learn about our editorial process →
+                </Link>
+              </p>
+            </div>
           </div>
 
           {/* CTA */}
