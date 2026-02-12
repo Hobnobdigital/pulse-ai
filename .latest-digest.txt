@@ -1,9 +1,9 @@
-📰 **Pulse AI - 1-Hour Digest** (2026-02-07 19:35 UTC)
+📰 **Pulse AI - 1-Hour Digest** (2026-02-11 23:45 UTC)
 Schedule: Every 1hr (24 checks/day) | You pick ~6 to publish
 
-1. 📌 **Google AI Introduces PaperBanana: An Agentic Framework that Automates Publication Ready Methodology Diagrams and Statistical Plots**
-   Source: MarkTechPost | Score: 10/100
-   Link: https://www.marktechpost.com/2026/02/07/google-ai-introduces-paperbanana-an-agentic-framework-that-automates-publication-ready-methodology-diagrams-and-statistical-plots/
+1. 📌 **AI inference startup Modal Labs in talks to raise at $2.5B valuation, sources say**
+   Source: TechCrunch AI | Score: 10/100
+   Link: https://techcrunch.com/2026/02/11/ai-inference-startup-modal-labs-in-talks-to-raise-at-2-5b-valuation-sources-say/
 
 
 💡 **Reply with article numbers to publish** (e.g., "publish 1, 3, 5")

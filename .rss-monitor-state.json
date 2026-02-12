@@ -1,13 +1,21 @@
 {
-  "last_check": "2026-02-07T19:35:05.927358",
+  "last_check": "2026-02-11T23:45:28.010472",
   "articles": [
     {
-      "source": "MarkTechPost",
-      "title": "Google AI Introduces PaperBanana: An Agentic Framework that Automates Publication Ready Methodology Diagrams and Statistical Plots",
-      "link": "https://www.marktechpost.com/2026/02/07/google-ai-introduces-paperbanana-an-agentic-framework-that-automates-publication-ready-methodology-diagrams-and-statistical-plots/",
-      "description": "<p>Generating publication-ready illustrations is a labor-intensive bottleneck in the research workflow. While AI scientists can now handle literature reviews and code, they struggle to visually communicate complex discoveries. A research team from Google and Peking University introduce new framework...",
-      "pub_date": "2026-02-07T18:45:44",
+      "source": "TechCrunch AI",
+      "title": "AI inference startup Modal Labs in talks to raise at $2.5B valuation, sources say",
+      "link": "https://techcrunch.com/2026/02/11/ai-inference-startup-modal-labs-in-talks-to-raise-at-2-5b-valuation-sources-say/",
+      "description": "General Catalyst is in talks to lead the round for the four-year-old startup, according to our sources.",
+      "pub_date": "2026-02-11T22:48:35",
       "relevance": 10
+    },
+    {
+      "source": "TechCrunch AI",
+      "title": "xAI lays out interplanetary ambitions in public all-hands",
+      "link": "https://techcrunch.com/2026/02/11/xai-lays-out-interplanetary-ambitions-in-public-all-hands/",
+      "description": "On Wednesday, xAI took the rare step of publishing its full 45-minute all-hands presentation to the X platform, making it widely available.",
+      "pub_date": "2026-02-11T23:29:08",
+      "relevance": 5
     }
   ],
   "pending_approval": true
