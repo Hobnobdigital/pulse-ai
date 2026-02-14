@@ -80,7 +80,7 @@ I've been "vibe coding" my way through prompts for months, getting decent but in
 For all its capabilities, Claude Opus 4.6 still has limitations:
 
 - It can't actually taste food, so my dream of an AI food critic remains unfulfilled
-- It won't send passive-aggressive emails to your landlord for you (I asked)
+- It won't generate a convincing excuse for why you missed that deadline ("my dog ate my server" was rejected)
 - It refuses to generate "proof" that I definitely did not steal that traffic cone in college
 - It cannot physically stop me from doomscrolling Twitter at midnight
 
