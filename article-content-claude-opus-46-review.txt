@@ -22,9 +22,9 @@ There are four effort levels: low, medium, high, and "max." The max setting is e
 
 Here's the genuinely brilliant bit: When you hit that million-token limit, Claude doesn't just throw up its hands and say "lol too long." Instead, it **automatically summarizes earlier parts of the conversation** to make room for new information.
 
-It's like having a research assistant who takes notes during a meeting and whispers the key points in your ear when someone references something from three hours ago. Except this assistant never needs bathroom breaks, doesn't steal your lunch from the office fridge, and won't judge you for your coffee consumption.
+It's like having a research assistant who takes notes during a meeting and whispers the key points in your ear when someone references something from three hours ago. Except this assistant never needs bathroom breaks, doesn't steal your lunch from the office fridge, and won't judge you for your questionable sleep schedule.
 
-Actually, wait—it definitely judges the coffee thing. It mentioned my caffeine intake in three separate analyses. Rude.
+Actually, wait—it definitely judges the sleep thing. It mentioned my 3 AM workflow habits in three separate analyses. Rude.
 
 ### The Speed Setting for People With More Money Than Patience
 
@@ -82,7 +82,7 @@ But for complex research, coding projects, strategic planning, or any task where
 
 **Rating: 9.5/10**
 
-The half-point deduction is purely because it keeps making me feel bad about my caffeine consumption. Nobody asked for an AI with judgment, Claude. Nobody asked.
+The half-point deduction is purely because it keeps making me feel bad about my sleep habits. Nobody asked for an AI with judgment, Claude. Nobody asked.
 
 ---
 
