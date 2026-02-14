@@ -16,7 +16,7 @@ The new "adaptive thinking" feature is genuinely clever. Instead of treating eve
 
 Ask it "What's 2+2?" and it gives you 4 immediately. Ask it to analyze the geopolitical implications of AI development across 47 countries using 15 research papers, and it enters what I can only describe as "main character energy"—thinking for minutes, drawing connections you didn't see, and occasionally pausing like it's reconsidering its life choices.
 
-There are four effort levels: low, medium, high, and "max." The max setting is essentially Claude doing a line of digital cocaine and solving your problem with the intensity of a grad student who's had too much coffee and just discovered their thesis deadline was moved up by three weeks.
+There are four effort levels: low, medium, high, and "max." The max setting is essentially Claude mainlining three espressos and solving your problem with the manic intensity of a software engineer who's been awake for 36 hours and just realized the production database is down.
 
 ### Context Compaction: The Feature Nobody Asked For But Everyone Needed
 
