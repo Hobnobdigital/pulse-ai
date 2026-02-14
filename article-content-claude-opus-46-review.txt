@@ -55,21 +55,25 @@ It cleaned it, normalized it, created pivot tables, identified trends, and gener
 
 I'm not saying Claude is going to take his job. I'm just saying he should probably update his LinkedIn.
 
-### The Code Review That Made Me Question My Career
+### The Prompt Engineering Session That Broke My Brain
 
-I threw Claude Opus 4.6 a challenge that would make most developers weep: review a legacy Python codebase I inherited from a developer who apparently learned to code from YouTube tutorials circa 2014. We're talking 50,000 lines of spaghetti code, zero documentation, variable names like `x1`, `x2`, and `thingy`, and comments that just say "TODO: fix this later"—except "later" was apparently seven years ago.
+I decided to test Claude's prompt engineering capabilities by giving it the most convoluted, poorly structured request I could muster—essentially how I actually talk to AI when I'm tired. I fed it a rambling, 800-word stream-of-consciousness description of a marketing campaign I wanted to build, complete with contradictory goals, vague aesthetic references ("like that one Apple ad but more... you know... vibe-y"), and at one point I literally wrote "make it good" as a deliverable.
 
-Claude didn't just review it. It performed a full archaeological dig.
+Most AIs would have given me generic fluff or asked for clarification. Claude Opus 4.6? It performed prompt archaeology.
 
-Within minutes, it identified 23 critical security vulnerabilities that had somehow survived three different security audits. It found a race condition that had been causing intermittent crashes for two years that nobody could reproduce. It even discovered that one "unused" function was actually being called by a legacy cron job that nobody remembered existed, and removing it would have broken the entire billing system.
+First, it identified the seven different campaign objectives I'd accidentally mashed together. Then it extracted the actual business goals from my nonsense. It created a structured creative brief with clear deliverables, target personas, messaging pillars, and a channel strategy—all while maintaining the aesthetic direction I was too incoherent to articulate properly.
 
-But the kicker? It rewrote the entire codebase. Clean architecture. Type hints. Proper error handling. Documentation that actually explains what functions do instead of just restating the function name with different words.
+But the real magic happened when it started generating. Instead of just spitting out copy, it wrote a series of prompts for image generation tools, each one more detailed and specific than anything I could have written. We're talking lighting specifications, compositional guidelines, emotional tone descriptors—the kind of prompts that make Midjourney sing instead of just hum.
 
-I stared at the refactored code for ten minutes. It was elegant. It was readable. It made the original look like someone had smashed a keyboard with a hammer and called it software engineering.
+"Prompt engineer a prompt engineer," I thought, feeling both clever and slightly terrified.
 
-Then I checked the git blame. The "author" was still me. My future self, apparently, writes code like a Staff Engineer at Google. My present self writes code like someone who learned Python from a TikTok tutorial.
+Then it generated the actual campaign assets. Headlines that didn't make me cringe. Body copy that sounded human. Social captions that didn't read like a LinkedIn influencer having a breakdown. It even wrote the creative rationale for each piece, explaining why certain phrasing would resonate with specific audience segments.
 
-The imposter syndrome is real, folks.
+I sat there staring at my screen for a solid five minutes. This was the kind of output that normally requires a creative director, a copywriter, and three rounds of revisions. Claude had done it in one shot, based on my incoherent rambling.
+
+The million-token context window meant it could hold my entire brand guidelines document, my previous campaign performance data, my competitor analysis, and my chaotic brief—all at once. It wasn't just following instructions; it was synthesizing context like a creative partner who's been on the team for years.
+
+I've been "vibe coding" my way through prompts for months, getting decent but inconsistent results. Claude Opus 4.6 turned my vibes into actual strategy. It's like the difference between humming a melody and having a full orchestra perform your symphony—except you're still humming, and somehow the orchestra understands exactly what you meant.
 
 ### What It Can't Do (Yet)
 
