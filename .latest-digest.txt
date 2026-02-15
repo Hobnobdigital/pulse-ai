@@ -1,9 +1,9 @@
-📰 **Pulse AI - 1-Hour Digest** (2026-02-15 18:10 UTC)
+📰 **Pulse AI - 1-Hour Digest** (2026-02-15 22:56 UTC)
 Schedule: Every 1hr (24 checks/day) | You pick ~6 to publish
 
-1. 📄 **India has 100M weekly active ChatGPT users, Sam Altman says**
-   Source: TechCrunch AI | Score: 9/100
-   Link: https://techcrunch.com/2026/02/15/india-has-100m-weekly-active-chatgpt-users-sam-altman-says/
+1. 📌 **OpenClaw creator Peter Steinberger joins OpenAI**
+   Source: TechCrunch AI | Score: 10/100
+   Link: https://techcrunch.com/2026/02/15/openclaw-creator-peter-steinberger-joins-openai/
 
 
 💡 **Reply with article numbers to publish** (e.g., "publish 1, 3, 5")
