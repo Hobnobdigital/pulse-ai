@@ -1,13 +1,13 @@
 {
-  "last_check": "2026-02-15T03:54:07.256092",
+  "last_check": "2026-02-15T09:08:14.587381",
   "articles": [
     {
       "source": "MarkTechPost",
-      "title": "Google AI Introduces the WebMCP to Enable Direct and Structured Website Interactions for New AI Agents",
-      "link": "https://www.marktechpost.com/2026/02/14/google-ai-introduces-the-webmcp-to-enable-direct-and-structured-website-interactions-for-new-ai-agents/",
-      "description": "<p>Google is officially turning Chrome into a playground for AI agents. For years, AI &#8216;browsers&#8217; have relied on a messy process: taking screenshots of websites, running them through vision models, and guessing where to click. This method is slow, breaks easily, and consumes massive amoun...",
-      "pub_date": "2026-02-15T03:01:03",
-      "relevance": 12
+      "title": "Meet \u2018Kani-TTS-2\u2019: A 400M Param Open Source Text-to-Speech Model that Runs in 3GB VRAM with Voice Cloning Support",
+      "link": "https://www.marktechpost.com/2026/02/15/meet-kani-tts-2-a-400m-param-open-source-text-to-speech-model-that-runs-in-3gb-vram-with-voice-cloning-support/",
+      "description": "<p>The landscape of generative audio is shifting toward efficiency. A new open-source contender, Kani-TTS-2, has been released by the team at nineninesix.ai. This model marks a departure from heavy, compute-expensive TTS systems. Instead, it treats audio as a language, delivering high-fidelity speec...",
+      "pub_date": "2026-02-15T08:17:46",
+      "relevance": 7
     }
   ],
   "pending_approval": true

@@ -1,9 +1,9 @@
-📰 **Pulse AI - 1-Hour Digest** (2026-02-15 03:54 UTC)
+📰 **Pulse AI - 1-Hour Digest** (2026-02-15 09:08 UTC)
 Schedule: Every 1hr (24 checks/day) | You pick ~6 to publish
 
-1. 📌 **Google AI Introduces the WebMCP to Enable Direct and Structured Website Interactions for New AI Agents**
-   Source: MarkTechPost | Score: 12/100
-   Link: https://www.marktechpost.com/2026/02/14/google-ai-introduces-the-webmcp-to-enable-direct-and-structured-website-interactions-for-new-ai-agents/
+1. 📄 **Meet ‘Kani-TTS-2’: A 400M Param Open Source Text-to-Speech Model that Runs in 3GB VRAM with Voice Cloning Support**
+   Source: MarkTechPost | Score: 7/100
+   Link: https://www.marktechpost.com/2026/02/15/meet-kani-tts-2-a-400m-param-open-source-text-to-speech-model-that-runs-in-3gb-vram-with-voice-cloning-support/
 
 
 💡 **Reply with article numbers to publish** (e.g., "publish 1, 3, 5")

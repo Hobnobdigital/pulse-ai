@@ -1,5 +1,5 @@
 📰 PULSE AI - ARTICLES READY FOR REVIEW
-Generated: 2026-02-15 03:07 UTC
+Generated: 2026-02-15 09:09 UTC
 Total Drafts: 1
 
 
@@ -7,22 +7,21 @@ Total Drafts: 1
 ARTICLE #1 🎭
 ============================================================
 
-TITLE: Unleash the AI Browser: Google's WebMCP Revolutionizes Website Interactions
-CATEGORY: GenAI
-READ TIME: 5 min read
+TITLE: Kani-TTS-2: The Virtuoso of Efficient Text-to-Speech
+CATEGORY: LLMs
+READ TIME: 3 min read
 TONE: witty
 SOURCE: MarkTechPost
-IMAGE: /images/unleash-the-ai-browser-google-s-webmcp-revolutioni-1771124861.png
+IMAGE: /images/kani-tts-2-the-virtuoso-of-efficient-text-to-speec-1771146559.png
 
 EXCERPT:
-Google's latest innovation, the WebMCP, is set to transform the way AI agents interact with the web. Goodbye, clunky screenshot-based browsing - hello, direct and structured website access. Pulse AI explores the implications of this game-changing technology.
+Kani-TTS-2, a new 400M parameter open-source text-to-speech model, is challenging the status quo by delivering high-fidelity speech with just 3GB of VRAM. This lean, mean audio-generating machine also boasts voice cloning capabilities, making it a game-changer in the world of generative audio.
 
 CONTENT:
-## Goodbye, Clunky AI Browsing - Hello, WebMCP
+## A Lean, Mean Audio-Generating Machine
+The generative audio landscape is undergoing a seismic shift, and Kani-TTS-2 is leading the charge. This new open-source contender, developed by the team at nineninesix.ai, is taking a radically different approach to text-to-speech (TTS) systems. Unlike the resource-hungry behemoths that have dominated the field, Kani-TTS-2 packs a powerful punch with just 3GB of VRAM, proving that you don't need a supercomputer to create high-fidelity speech.
 
-For years, AI agents have struggled with the messy process of website interactions. Screenshots, vision models, and guesswork - it's been a clunky, slow, and error-prone affair. But Google is about to change all that with the introduction of the WebMCP (Web Markup Communication Protocol).
-
-This revolutionary technology aims to give AI agents direct and structured access to website content, ushering in a new era of seamless, efficient, and reliable ...
+## Treatin...
 
 ---
 

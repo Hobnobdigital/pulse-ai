@@ -1,6 +1,36 @@
 {
     "posts": [
         {
+            "id": "anthropic-fast-mode-vs-openai-codex-spark-speed-wars",
+            "slug": "anthropic-fast-mode-vs-openai-codex-spark-speed-wars",
+            "title": "Anthropic Just Got Lapped: Why Their Fast Mode Is Six Times Slower Than OpenAI's Rocket",
+            "snippet": "Anthropic launched Fast Mode to compete with OpenAI's GPT-5.3-Codex-Spark. The problem? OpenAI is doing 1000 tokens per second on Cerebras chips while Anthropic is still at 170. Here is why the gap is way bigger than it looks.",
+            "content": "## Anthropic Just Got Lapped: Why Their Fast Mode Is Six Times Slower Than OpenAI's Rocket\n\n**Anthropic dropped Fast Mode this week, and I have to give them credit for trying. But here is the awkward truth. They showed up to a Formula 1 race with a really nice Honda Civic.**\n\n### The Numbers That Hurt\n\nLet us talk speed. Anthropic Fast Mode pumps out about **170 tokens per second**. That is 2.5 times faster than their normal mode, which sounds great until you hear what OpenAI is doing.\n\nGPT-5.3-Codex-Spark hits **over 1000 tokens per second**. That is not just faster. That is a completely different sport.\n\nPicture two cars at a stoplight. Anthropic is driving a solid sports car. OpenAI is piloting a rocket on wheels. By the time Anthropic hits sixty, OpenAI is already across state lines.\n\n### Why The Gap Is Actually Bigger Than It Looks\n\nHere is where it gets interesting. Anthropic is not actually slow. They are just running on regular roads with regular engines. OpenAI built a dedicated racetrack with custom fuel.\n\nAnthropic Fast Mode runs on their existing infrastructure. They optimized what they already had, which is smart and practical. It is like tuning your daily driver to go faster. Respectable. Sensible.\n\nBut OpenAI partnered with Cerebras and their Wafer Scale Engine 3 chips. These are not normal GPUs. They are massive AI accelerators the size of dinner plates, built specifically for one job. Making AI go stupidly fast.\n\nThink of it this way. Anthropic put racing tires on their sedan. OpenAI built an actual race car from scratch. No wonder there is a gap.\n\n### What This Actually Means For You\n\nIf you are a developer, this speed difference changes how you work.\n\nWith OpenAI Spark, you can iterate in real time. You type a request and watch code appear as fast as your screen can refresh. It feels like telepathy. You think it, you see it.\n\nWith Anthropic Fast Mode, you are still waiting. Not long, but long enough to break your flow. That half second of delay is just enough for your brain to start checking Twitter or wondering what is for lunch.\n\nFlow state is fragile. Spark keeps you in it. Fast Mode brings you just close enough to remember what flow state feels like before gently reminding you that you are not there yet.\n\n### The Real Question: Does Speed Even Matter?\n\nHere is the twist. Sometimes slower is actually smarter.\n\nAnthropic has built a reputation for careful, accurate responses. Their models think before they speak. They are the thoughtful friend who pauses before giving advice.\n\nOpenAI Spark is the hyperactive genius who answers before you finish asking. Sometimes that is exactly what you need. Sometimes you just got handed a solution to the wrong problem at incredible velocity.\n\nThe 170 tokens per second from Anthropic might actually produce better code. It might catch edge cases that Spark blazes right past. We do not know yet because both just launched.\n\n### The Hardware War Nobody Saw Coming\n\nWhat makes this fascinating is the infrastructure play. OpenAI is not just competing on models anymore. They are competing on hardware stacks.\n\nThe Cerebras partnership signals something bigger. The future of AI inference might not be about who has the best algorithms. It might be about who has the best custom silicon.\n\nAnthropic is betting that smart software on standard hardware wins. OpenAI is betting that specialized chips beat general purpose ones. Both bets could be right in different scenarios.\n\n### What Happens Next\n\nAnthropic is not going to sit still. They have billions in funding and some of the best engineers on the planet. Expect a hardware announcement soon, or a partnership, or some software breakthrough that closes the gap without custom chips.\n\nOpenAI will keep pushing the speed boundary. 1000 tokens per second is just the beginning. If Cerebras keeps delivering, we might see 2000, 5000, or even instant generation.\n\nThe real winner is developers. Competition breeds innovation, and both companies are now racing to make AI feel as responsive as your own thoughts.\n\n### The Bottom Line\n\nAnthropic Fast Mode is a solid upgrade that looks disappointing only because OpenAI launched a moonshot the same week. It is like running your fastest mile ever on the same day someone else broke the sound barrier.\n\nBoth have their place. Spark for when you need answers yesterday. Fast Mode for when you want answers you can actually trust.\n\nThe speed wars have begun. Buckle up.\n\n---\n\n**Availability:** Anthropic Fast Mode (rolling out), OpenAI GPT-5.3-Codex-Spark (ChatGPT Pro only)\n**Speed Gap:** 170 vs 1000+ tokens per second\n**The Real Difference:** Standard hardware vs custom Cerebras chips",
+            "category": "LLMs",
+            "read_time": "5 min read",
+            "image_url": "/images/ai-speed-wars-anthropic-openai-1771177484.png",
+            "images": [
+                "/images/ai-speed-wars-anthropic-openai-1771177484.png"
+            ],
+            "source": "Anthropic, OpenAI, Cerebras",
+            "source_attribution": "Based on Anthropic Fast Mode announcement, OpenAI Codex-Spark release, and Cerebras technical specifications",
+            "original_link": "https://www.anthropic.com/news",
+            "published_at": "2026-02-15T17:45:00.000Z",
+            "ai_transparency": {
+                "label": "\ud83e\udd16 AI-Assisted",
+                "description": "AI assisted with research and drafting; verified, edited, and enhanced by human editors",
+                "ai_tools_used": [
+                    "Perplexity search",
+                    "OpenAI documentation",
+                    "Anthropic documentation",
+                    "Benchmark research"
+                ],
+                "human_oversight": "Fact-checked and edited by Kwame Sarkodee-Adoo",
+                "fact_checked": true
+            },
+            "featured": false
+        },
+        {
             "id": "gpt-codex-spark-realtime-coding-1000-tokens",
             "slug": "gpt-codex-spark-realtime-coding-1000-tokens",
             "title": "GPT-5.3-Codex-Spark: The 1000 Tokens-Per-Second Model That Trades Brain for Speed",
