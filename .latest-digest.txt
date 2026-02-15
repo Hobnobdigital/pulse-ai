@@ -1,9 +1,9 @@
-📰 **Pulse AI - 1-Hour Digest** (2026-02-11 23:45 UTC)
+📰 **Pulse AI - 1-Hour Digest** (2026-02-15 03:54 UTC)
 Schedule: Every 1hr (24 checks/day) | You pick ~6 to publish
 
-1. 📌 **AI inference startup Modal Labs in talks to raise at $2.5B valuation, sources say**
-   Source: TechCrunch AI | Score: 10/100
-   Link: https://techcrunch.com/2026/02/11/ai-inference-startup-modal-labs-in-talks-to-raise-at-2-5b-valuation-sources-say/
+1. 📌 **Google AI Introduces the WebMCP to Enable Direct and Structured Website Interactions for New AI Agents**
+   Source: MarkTechPost | Score: 12/100
+   Link: https://www.marktechpost.com/2026/02/14/google-ai-introduces-the-webmcp-to-enable-direct-and-structured-website-interactions-for-new-ai-agents/
 
 
 💡 **Reply with article numbers to publish** (e.g., "publish 1, 3, 5")

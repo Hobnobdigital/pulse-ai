@@ -1,21 +1,13 @@
 {
-  "last_check": "2026-02-11T23:45:28.010472",
+  "last_check": "2026-02-15T03:54:07.256092",
   "articles": [
     {
-      "source": "TechCrunch AI",
-      "title": "AI inference startup Modal Labs in talks to raise at $2.5B valuation, sources say",
-      "link": "https://techcrunch.com/2026/02/11/ai-inference-startup-modal-labs-in-talks-to-raise-at-2-5b-valuation-sources-say/",
-      "description": "General Catalyst is in talks to lead the round for the four-year-old startup, according to our sources.",
-      "pub_date": "2026-02-11T22:48:35",
-      "relevance": 10
-    },
-    {
-      "source": "TechCrunch AI",
-      "title": "xAI lays out interplanetary ambitions in public all-hands",
-      "link": "https://techcrunch.com/2026/02/11/xai-lays-out-interplanetary-ambitions-in-public-all-hands/",
-      "description": "On Wednesday, xAI took the rare step of publishing its full 45-minute all-hands presentation to the X platform, making it widely available.",
-      "pub_date": "2026-02-11T23:29:08",
-      "relevance": 5
+      "source": "MarkTechPost",
+      "title": "Google AI Introduces the WebMCP to Enable Direct and Structured Website Interactions for New AI Agents",
+      "link": "https://www.marktechpost.com/2026/02/14/google-ai-introduces-the-webmcp-to-enable-direct-and-structured-website-interactions-for-new-ai-agents/",
+      "description": "<p>Google is officially turning Chrome into a playground for AI agents. For years, AI &#8216;browsers&#8217; have relied on a messy process: taking screenshots of websites, running them through vision models, and guessing where to click. This method is slow, breaks easily, and consumes massive amoun...",
+      "pub_date": "2026-02-15T03:01:03",
+      "relevance": 12
     }
   ],
   "pending_approval": true
