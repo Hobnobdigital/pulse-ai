@@ -292,7 +292,8 @@ pulse-ai/
 │   ├── PostCard.tsx             # Article card
 │   ├── PostGrid.tsx             # Article grid
 │   ├── Footer.tsx               # Site footer
-│   └── ScrollProgress.tsx       # Reading progress
+│   ├── ScrollProgress.tsx       # Reading progress
+│   └── DisqusComments.tsx       # Disqus comment embed
 │
 ├── public/                       # Static assets
 │   ├── images/                  # GPT-1.5 generated images
@@ -325,11 +326,16 @@ OPENAI_API_KEY=sk-...
 # Anthropic - Article Generation
 ANTHROPIC_API_KEY=sk-ant-...
 
+# Disqus Comments
+NEXT_PUBLIC_DISQUS_SHORTNAME=your-disqus-shortname
+
 # Optional: Analytics
 NEXT_PUBLIC_GA_ID=G-...
 ```
 
 **Required for image generation:** OPENAI_API_KEY
+
+**Required for comments:** NEXT_PUBLIC_DISQUS_SHORTNAME (see Disqus Setup below)
 
 ---
 
@@ -398,6 +404,51 @@ EOF
 ```
 
 ---
+
+## Disqus Comments Setup
+
+Pulse AI uses Disqus for article comments with social login support.
+
+### Setup Instructions
+
+1. **Create Disqus Account**
+   - Go to https://disqus.com/admin/create/
+   - Register a new site (e.g., "Pulse AI Blog")
+   - Choose your unique shortname (e.g., `pulse-ai-blog`)
+
+2. **Configure Disqus**
+   - In Disqus admin, go to Settings → General
+   - Set site name and description
+   - Under "Comment Sorting", recommend "Best" for quality
+
+3. **Enable Social Login (Required)**
+   - Go to Settings → Community Rules
+   - Enable "Require guests to verify email"
+   - Go to Settings → SSO (Single Sign-On) - optional but recommended
+   - Or keep default: Disqus handles auth via Google, Facebook, Twitter
+
+4. **Add Environment Variable**
+   ```
+   NEXT_PUBLIC_DISQUS_SHORTNAME=your-disqus-shortname
+   ```
+
+5. **Moderation Settings**
+   - Enable "Pre-moderation" for new users
+   - Add filtered words list if needed
+   - Set up email notifications for new comments
+
+### Features Enabled
+
+- ✅ Real-name policy (via social login)
+- ✅ Comment threading
+- ✅ Upvoting/downvoting
+- ✅ Email notifications for replies
+- ✅ Moderation dashboard
+- ✅ Spam filtering
+
+### Comment Placement
+
+Comments appear after article content, before the newsletter CTA. Each article gets its own unique Disqus thread based on the post ID.
 
 ## Team Notes
 

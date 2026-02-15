@@ -1,27 +1,52 @@
 📰 PULSE AI - ARTICLES READY FOR REVIEW
-Generated: 2026-02-15 09:09 UTC
-Total Drafts: 1
+Generated: 2026-02-15 18:11 UTC
+Total Drafts: 2
 
 
 ============================================================
 ARTICLE #1 🎭
 ============================================================
 
-TITLE: Kani-TTS-2: The Virtuoso of Efficient Text-to-Speech
+TITLE: India's ChatGPT Army: The AI Invasion That's Reshaping the World
 CATEGORY: LLMs
 READ TIME: 3 min read
 TONE: witty
-SOURCE: MarkTechPost
-IMAGE: /images/kani-tts-2-the-virtuoso-of-efficient-text-to-speec-1771146559.png
+SOURCE: TechCrunch AI
+IMAGE: /images/india-s-chatgpt-army-the-ai-invasion-that-s-reshap-1771179055.png
 
 EXCERPT:
-Kani-TTS-2, a new 400M parameter open-source text-to-speech model, is challenging the status quo by delivering high-fidelity speech with just 3GB of VRAM. This lean, mean audio-generating machine also boasts voice cloning capabilities, making it a game-changer in the world of generative audio.
+OpenAI CEO Sam Altman reveals that India has the largest number of student users for ChatGPT worldwide, with a staggering 100 million weekly active users. This AI takeover could have major implications for the future of education, technology, and global influence.
 
 CONTENT:
-## A Lean, Mean Audio-Generating Machine
-The generative audio landscape is undergoing a seismic shift, and Kani-TTS-2 is leading the charge. This new open-source contender, developed by the team at nineninesix.ai, is taking a radically different approach to text-to-speech (TTS) systems. Unlike the resource-hungry behemoths that have dominated the field, Kani-TTS-2 packs a powerful punch with just 3GB of VRAM, proving that you don't need a supercomputer to create high-fidelity speech.
+## The Rise of the ChatGPT Horde
 
-## Treatin...
+India, the land of a billion-plus minds, has quietly become the epicenter of a veritable ChatGPT revolution. According to OpenAI CEO Sam Altman, the country now boasts a jaw-dropping 100 million weekly active users of the AI chatbot - a number that would make any tech titan blush.
+
+This AI invasion is more than just a quirky statistic. It's a sign of a seismic shift in how the world is harnessing the power of large language models (LLMs) like ChatGPT. India's st...
+
+---
+
+============================================================
+ARTICLE #2 🎭
+============================================================
+
+TITLE: Glean: The Invisible Powerhouse Behind Enterprise AI
+CATEGORY: Enterprise AI
+READ TIME: 4 min read
+TONE: witty
+SOURCE: TechCrunch AI
+IMAGE: /images/glean-the-invisible-powerhouse-behind-enterprise-a-1771179112.png
+
+EXCERPT:
+Glean, a former enterprise search tool, is transforming itself into the middleware layer that powers the next generation of enterprise AI. In this exclusive interview, CEO Arvind Jain shares how Glean is reshaping the AI landscape from the ground up.
+
+CONTENT:
+## The AI Middleman You Never Knew You Needed
+
+The enterprise AI race is on, and Glean is positioning itself as the dark horse that could change the game. In a recent episode of the Equity podcast, Glean CEO Arvind Jain lifted the veil on the company's ambitious pivot from a simple enterprise search tool to the middleware layer that will power the next wave of AI-driven business solutions.
+
+## From Search to Seamless AI
+Once upon a time, Glean was just another enterprise search platform, helping...
 
 ---
 

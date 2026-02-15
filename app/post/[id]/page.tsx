@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ScrollProgress from '@/components/ScrollProgress';
 import NewsletterCTA from './NewsletterCTA';
+import DisqusComments from '@/components/DisqusComments';
 import postsJson from '@/public/posts/posts.json';
 const postsData = postsJson.posts;
 import ReactMarkdown from 'react-markdown';
@@ -223,6 +224,13 @@ export default async function PostPage({ params }: PostPageProps) {
               </p>
             </div>
           </div>
+
+          {/* Disqus Comments */}
+          <DisqusComments 
+            postId={post.id}
+            postTitle={post.title}
+            postSlug={post.slug}
+          />
 
           {/* CTA */}
           <NewsletterCTA />

@@ -1,13 +1,21 @@
 {
-  "last_check": "2026-02-15T09:08:14.587381",
+  "last_check": "2026-02-15T18:10:01.428381",
   "articles": [
     {
-      "source": "MarkTechPost",
-      "title": "Meet \u2018Kani-TTS-2\u2019: A 400M Param Open Source Text-to-Speech Model that Runs in 3GB VRAM with Voice Cloning Support",
-      "link": "https://www.marktechpost.com/2026/02/15/meet-kani-tts-2-a-400m-param-open-source-text-to-speech-model-that-runs-in-3gb-vram-with-voice-cloning-support/",
-      "description": "<p>The landscape of generative audio is shifting toward efficiency. A new open-source contender, Kani-TTS-2, has been released by the team at nineninesix.ai. This model marks a departure from heavy, compute-expensive TTS systems. Instead, it treats audio as a language, delivering high-fidelity speec...",
-      "pub_date": "2026-02-15T08:17:46",
-      "relevance": 7
+      "source": "TechCrunch AI",
+      "title": "India has 100M weekly active ChatGPT users, Sam Altman says",
+      "link": "https://techcrunch.com/2026/02/15/india-has-100m-weekly-active-chatgpt-users-sam-altman-says/",
+      "description": "OpenAI CEO Sam Altman says India has the largest number of student users of ChatGPT worldwide.",
+      "pub_date": "2026-02-15T18:00:00",
+      "relevance": 9
+    },
+    {
+      "source": "TechCrunch AI",
+      "title": "The enterprise AI land grab is on. Glean is building the layer beneath the interface.",
+      "link": "https://techcrunch.com/2026/02/15/the-enterprise-ai-land-grab-is-on-glean-is-building-the-layer-beneath-the-interface/",
+      "description": "In this week's episode of the Equity podcast, Glean CEO Arvind Jain explains the company's shift from enterprise search tool to middleware layer for enterprise AI.",
+      "pub_date": "2026-02-15T17:30:00",
+      "relevance": 5
     }
   ],
   "pending_approval": true
