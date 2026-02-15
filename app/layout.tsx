@@ -47,6 +47,13 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${newsreader.variable}`}
     >
+      <head>
+        <script
+          id="dsq-count-scr"
+          src="//pulse-ai-blog.disqus.com/count.js"
+          async
+        />
+      </head>
       <body className="bg-white text-ink antialiased">
         <Header />
         <main className="min-h-screen">{children}</main>
