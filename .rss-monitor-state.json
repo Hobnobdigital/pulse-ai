@@ -1,12 +1,12 @@
 {
-  "last_check": "2026-02-15T23:12:34.254509",
+  "last_check": "2026-02-16T22:58:54.181495",
   "articles": [
     {
-      "source": "TechCrunch AI",
-      "title": "OpenClaw creator Peter Steinberger joins OpenAI",
-      "link": "https://techcrunch.com/2026/02/15/openclaw-creator-peter-steinberger-joins-openai/",
-      "description": "OpenAI said OpenClaw will live on as an open source project.",
-      "pub_date": "2026-02-15T22:28:02",
+      "source": "MarkTechPost",
+      "title": "How to Build Human-in-the-Loop Plan-and-Execute AI Agents with Explicit User Approval Using LangGraph and Streamlit",
+      "link": "https://www.marktechpost.com/2026/02/16/how-to-build-human-in-the-loop-plan-and-execute-ai-agents-with-explicit-user-approval-using-langgraph-and-streamlit/",
+      "description": "<p>In this tutorial, we build a human-in-the-loop travel booking agent that treats the user as a teammate rather than a passive observer. We design the system so the agent first reasons openly by drafting a structured travel plan, then deliberately pauses before taking any action. We expose this pro...",
+      "pub_date": "2026-02-16T22:01:30",
       "relevance": 10
     }
   ],
