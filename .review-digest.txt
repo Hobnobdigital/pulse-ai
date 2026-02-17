@@ -1,28 +1,53 @@
 📰 PULSE AI - ARTICLES READY FOR REVIEW
-Generated: 2026-02-16 22:24 UTC
-Total Drafts: 1
+Generated: 2026-02-17 15:33 UTC
+Total Drafts: 2
 
 
 ============================================================
 ARTICLE #1 🎭
 ============================================================
 
-TITLE: Unleash AI's Inner Planner: Building Human-Centric Assistants that Earn Your Trust
+TITLE: From Robots to Agents: SS&C Blue Prism Guides the Automation Evolution
 CATEGORY: Enterprise AI
-READ TIME: 4 min read
+READ TIME: 5 min read
 TONE: witty
-SOURCE: MarkTechPost
-IMAGE: /images/unleash-ai-s-inner-planner-building-human-centric-1771280675.png
+SOURCE: AI News (UK)
+IMAGE: /images/from-robots-to-agents-ss-c-blue-prism-guides-the-a-1771342345.png
 
 EXCERPT:
-Discover how to create AI agents that work hand-in-hand with humans, proposing detailed plans before taking action. This tutorial unveils a new approach to building trustworthy, transparent AI assistants using LangGraph and Streamlit.
+SS&C Blue Prism is leading the charge from robotic process automation (RPA) to the brave new world of agentic AI. In this engaging look at the automation revolution, we explore how organizations can navigate the transition and unlock the full potential of autonomous systems.
 
 CONTENT:
-## AI Assistants Graduate from Chatbots to Travel Companions
+## The Rise of the Agentic Machines
 
-AI has long been billed as the ultimate personal assistant - a digital genie that can handle all our tedious tasks with the snap of a finger. But as anyone who's dealt with finicky chatbots knows, the reality has often fallen short of the hype. Until now, that is.
+For organizations still firmly entrenched in the world of robotic process automation (RPA), the idea of embracing agentic AI as the next step in automation might seem downright terrifying. But fear not, because SS&C Blue Prism is here to guide you on this journey, one step at a time.
 
-In this captivating tutorial, we dive into a novel approach to building human-centric AI agents that treat users as true collaborators, not passive observers. By leveraging...
+While RPA has been a game-changer in the world of business process optimization, the time has come to think beyond the rigid confines of rule-based bots. Enter the era of agenti...
+
+---
+
+============================================================
+ARTICLE #2 🎭
+============================================================
+
+TITLE: Unicorns of AI: 17 U.S. Startups That Hit the Big Time in 2026
+CATEGORY: Enterprise AI
+READ TIME: 5 min read
+TONE: witty
+SOURCE: TechCrunch AI
+IMAGE: /images/unicorns-of-ai-17-u-s-startups-that-hit-the-big-ti-1771342402.png
+
+EXCERPT:
+A new generation of AI unicorns has emerged, with 17 U.S. startups raising over $100 million in 2026. From machine learning powerhouses to autonomous agents, these companies are redefining the future of enterprise technology.
+
+CONTENT:
+## The $1 Billion AI Titans
+
+If 2026 has taught us anything, it's that the AI gold rush is in full swing. Three U.S. AI companies have minted new unicorn status, raising a staggering $1 billion or more this year alone. These AI titans are set to transform industries, from logistics to healthcare.
+
+## The $100 Million Club
+
+But the unicorns aren't the only ones cashing in. Fourteen other U.S. AI startups have managed to raise a cool $100 million or more in 2026, demonstrating the insatiable deman...
 
 ---
 

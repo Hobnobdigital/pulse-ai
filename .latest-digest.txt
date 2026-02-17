@@ -1,9 +1,9 @@
-📰 **Pulse AI - 1-Hour Digest** (2026-02-16 22:58 UTC)
+📰 **Pulse AI - 1-Hour Digest** (2026-02-17 16:01 UTC)
 Schedule: Every 1hr (24 checks/day) | You pick ~6 to publish
 
-1. 📌 **How to Build Human-in-the-Loop Plan-and-Execute AI Agents with Explicit User Approval Using LangGraph and Streamlit**
-   Source: MarkTechPost | Score: 10/100
-   Link: https://www.marktechpost.com/2026/02/16/how-to-build-human-in-the-loop-plan-and-execute-ai-agents-with-explicit-user-approval-using-langgraph-and-streamlit/
+1. 📄 **SS&C Blue Prism: On the journey from RPA to agentic automation**
+   Source: AI News (UK) | Score: 7/100
+   Link: https://www.artificialintelligence-news.com/news/ssc-blue-prism-on-the-journey-from-rpa-to-agentic-automation/
 
 
 💡 **Reply with article numbers to publish** (e.g., "publish 1, 3, 5")
