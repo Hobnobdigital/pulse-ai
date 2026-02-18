@@ -1,13 +1,21 @@
 {
-  "last_check": "2026-02-17T16:01:05.792119",
+  "last_check": "2026-02-18T16:06:36.767301",
   "articles": [
     {
-      "source": "AI News (UK)",
-      "title": "SS&C Blue Prism: On the journey from RPA to agentic automation",
-      "link": "https://www.artificialintelligence-news.com/news/ssc-blue-prism-on-the-journey-from-rpa-to-agentic-automation/",
-      "description": "<p>For organizations who are still wedded to the rules and structures of robotic process automation (RPA), then considering agentic AI as the next step for automation may be faintly terrifying. SS&#38;C Blue Prism, however, is here to help, taking customers on the journey from RPA to agentic automat...",
-      "pub_date": "2026-02-17T15:27:34",
-      "relevance": 7
+      "source": "TechCrunch AI",
+      "title": "Kana emerges from stealth with $15M to build flexible AI agents for marketers",
+      "link": "https://techcrunch.com/2026/02/18/kana-emerges-from-stealth-with-15m-to-build-flexible-ai-agents-for-marketers/",
+      "description": "Kana, a new AI marketing startup from the founders of Rapt and Krux, has raised $15 million to build customizable, agent-based marketing tools.",
+      "pub_date": "2026-02-18T15:08:40",
+      "relevance": 10
+    },
+    {
+      "source": "TechCrunch AI",
+      "title": "Google adds music generation capabilities to the Gemini app",
+      "link": "https://techcrunch.com/2026/02/18/google-adds-music-generation-capabilities-to-the-gemini-app/",
+      "description": "Users will be able to use text, images, and videos as a reference to generate music",
+      "pub_date": "2026-02-18T16:00:00",
+      "relevance": 5
     }
   ],
   "pending_approval": true
