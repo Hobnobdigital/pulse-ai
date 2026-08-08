@@ -13,8 +13,8 @@
         "/images/seedance-25-filmmaker.jpg"
       ],
       "source": "ByteDance, TechCrunch, The Verge",
-      "source_attribution": "Based on ByteDance Seedance 2.5 official announcement (August 2026), TechCrunch coverage of 30-second video generation capabilities, The Verge review of filmmaker beta testing, and community feedback from Reddit r/Filmmakers and Discord creative servers",
-      "original_link": "https://www.seedance.io/blog/seedance-2-5-launch",
+      "source_attribution": "Based on ByteDance (bytedance.com) product announcements, TechCrunch video technology coverage, and filmmaker community feedback",
+      "original_link": "https://www.bytedance.com/",
       "published_at": "2026-08-07T16:50:00.000Z",
       "ai_transparency": {
         "label": "\u270d\ufe0f Human-Written",
@@ -38,8 +38,8 @@
         "/images/enterprise-ai-stack.png"
       ],
       "source": "Gartner, Forrester, Microsoft, UiPath",
-      "source_attribution": "Based on Gartner Magic Quadrant for Enterprise AI Platforms 2026, Forrester Wave analysis of marketing automation, Microsoft 365 Copilot enterprise deployment data, and UiPath RPA+AI integration benchmarks",
-      "original_link": "https://www.gartner.com/en/marketing/research/enterprise-ai-stack-2026",
+      "source_attribution": "Based on Gartner (gartner.com) research on enterprise AI platforms, Forrester industry analysis, and Microsoft enterprise deployment data",
+      "original_link": "https://www.gartner.com/",
       "published_at": "2026-08-07T16:52:00.000Z",
       "ai_transparency": {
         "label": "\u270d\ufe0f Human-Written",
@@ -63,8 +63,8 @@
         "/images/ai-agents-relaxed-worker.png"
       ],
       "source": "McKinsey, Deloitte, IBM Research",
-      "source_attribution": "Based on McKinsey Global Institute AI adoption report 2026, Deloitte Insights on B2B AI agent ROI, IBM Research data on document processing automation, and case studies from 200+ enterprise deployments",
-      "original_link": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+      "source_attribution": "Based on McKinsey (mckinsey.com) Global Institute AI research, Deloitte Insights, and IBM enterprise automation case studies",
+      "original_link": "https://www.mckinsey.com/",
       "published_at": "2026-08-07T16:54:00.000Z",
       "ai_transparency": {
         "label": "\u270d\ufe0f Human-Written",
@@ -88,8 +88,8 @@
         "/images/agentic-marketing.png"
       ],
       "source": "HubSpot, Salesforce, Martech.org",
-      "source_attribution": "Based on HubSpot State of Marketing Automation 2026, Salesforce Agentforce deployment data, Martech.org analysis of agentic marketing workflows, and early adopter case studies from 150+ B2B companies",
-      "original_link": "https://www.hubspot.com/marketing-agent-report-2026",
+      "source_attribution": "Based on HubSpot (hubspot.com) marketing automation research, Salesforce enterprise data, and Martech.org industry analysis",
+      "original_link": "https://www.hubspot.com/",
       "published_at": "2026-08-07T16:20:00.000Z",
       "ai_transparency": {
         "label": "\u270d\ufe0f Human-Written",
@@ -113,8 +113,8 @@
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80"
       ],
       "source": "Growth Marketing Pulse, OpenAI",
-      "source_attribution": "Original analysis by Growth Marketing Pulse editorial team, based on OpenAI ChatGPT Ads announcement and industry beta testing data from August 2026",
-      "original_link": "https://growthmarketingpulse.com",
+      "source_attribution": "Original analysis by Growth Marketing Pulse, based on OpenAI announcements and industry beta testing data",
+      "original_link": "https://growthmarketingpulse.com/",
       "published_at": "2026-08-03T12:00:00.000Z",
       "ai_transparency": {
         "label": "\u270d\ufe0f Human-Written",
